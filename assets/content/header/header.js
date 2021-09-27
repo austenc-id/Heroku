@@ -1,4 +1,4 @@
-import { cap, center, hide, row } from "../../style/style.js"
+import { cap, center, hidden, row } from "../../style/style.js"
 import { Templates } from "./templates.js"
 
 const template = new Templates
@@ -12,7 +12,7 @@ function subtitle () {
   document.getElementById( 'subtitle' ).innerHTML = template.subtitle
 }
 function details () {
-  document.getElementById( 'details' ).classList.add( row, cap, center, hide )
+  document.getElementById( 'details' ).classList.add( row, cap, center, hidden )
   document.getElementById( 'details' ).innerHTML = template.details
 }
 

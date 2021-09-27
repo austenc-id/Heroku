@@ -3,3 +3,12 @@
   font-family: consolas;
   background-color: #215732;
 }
+#header {
+  border-bottom: solid white;
+}
+#sb-left{
+  border: solid white;
+}
+#content {
+  border: solid white;
+}
