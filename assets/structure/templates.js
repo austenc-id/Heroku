@@ -9,8 +9,9 @@ export class Templates {
   }
   get header () {
     return /*html*/`
-    <h1 id="title"></h1>
-    <p id="subtitle"></p>
+    <row id="title"></row>
+    <row id="subtitle"></row>
+    <row id="details"></row>
     `
   }
   get nav () {

@@ -1,11 +1,11 @@
-import { Structure } from "./structure.js"
-const structure = new Structure
+import { content } from "./content/content.js"
+import { structure } from "./structure/structure.js"
+
 class Index {
 
   initialize () {
-    structure.body()
-    structure.top()
-    structure.bottom()
+    structure()
+    content()
   }
 }
 
