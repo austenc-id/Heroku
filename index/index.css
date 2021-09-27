@@ -1,0 +1,36 @@
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+#body {
+  color: white;
+  font-family: consolas;
+  background-color: #215732;
+}
+#header {
+  text-align: center;
+}
+#details {
+  size: 10px;
+  font-style: italic;
+}
+#navigation {
+  text-transform: capitalize;
+}
+#sb-left {
+  display: flex;
+}
+#sb-right {
+  text-align: end;
+}
+#title {
+  text-align: center;
+  text-transform: capitalize;
+}
+#content-text {
+  text-indent: 5rem;
+}
+
+
