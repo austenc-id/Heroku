@@ -4,6 +4,7 @@ import { Templates } from "./templates.js"
 const template = new Templates
 
 function title () {
+  document.getElementById( 'title' ).setAttribute( 'onclick', 'index.initialize()' )
   document.getElementById( 'title' ).classList.add( row, cap, center )
   document.getElementById( 'title' ).innerHTML = template.title
 }

@@ -1,10 +1,10 @@
-export class biography {
+export class employment {
 
   get layout () { return }
   get text () {
     return /*html*/`
       <p id="section-title">
-        Who am I?
+        What have I done?
       </p>
       <p id="section-text">
         
