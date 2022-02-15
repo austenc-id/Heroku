@@ -4,7 +4,8 @@ Vue.createApp({
 
         const links = [
             {text: 'Github', url: 'https://github.com/austenc-id'},
-            {text: 'Linkdin', url: ''},
+            {text: 'Linkedin', url: 'https://www.linkedin.com/in/austenc-id/'},
+            {text: 'Resume pdf', url: 'resume.pdf'},
             ]
         const sections = [
             {title: "Work History", entries: [
