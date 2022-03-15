@@ -1,0 +1,140 @@
+[
+    {
+        "program": "Full Stack Django Web Development",
+        "org": "Portland Code Guild",
+        "certificates": [
+            {
+                "name": "Certificate",
+                "org": "Portland Code Guild",
+                "date": "February 2022"
+            }
+        ],
+        "skills": [],
+        "languages": [
+            "Python",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Flask",
+            "Django"
+        ],
+        "dates": {
+            "start": "October 2021",
+            "end": "February 2022"
+        },
+        "completed": true
+    },
+    {
+        "program": "Full Stack JavaScript Web Development",
+        "org": "Boise CodeWorks",
+        "certificates": [],
+        "skills": [],
+        "languages": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Node.js",
+            "MongoDB",
+            "Auth0",
+            "Axios API"
+        ],
+        "dates": {
+            "start": "August 2021",
+            "end": "September 2022"
+        },
+        "completed": false
+    },
+    {
+        "program": "Biomedical Equpiment Technician School",
+        "org": "DoD Medical Education & Training Campus",
+        "certificates": [
+            {
+                "name": "MOS Qualification",
+                "org": "DoD Medical Education & Training Campus",
+                "date": "June 2020"
+            }
+        ],
+        "skills": [
+            "electronic theory",
+            "medical terminology",
+            "troubleshooting",
+            "schematic literacy"
+        ],
+        "languages": [],
+        "dates": {
+            "start": "July 2019",
+            "end": "June 2020"
+        },
+        "completed": true
+    },
+    {
+        "program": "Combat Medic School",
+        "org": "DoD Medical Education & Training Campus",
+        "certificates": [
+            {
+                "name": "MOS Qualification",
+                "org": "DoD Medical Education & Training Campus",
+                "date": "May 2018"
+            },
+            {
+                "name": "EMT-Basic",
+                "org": "National Registry for Emergency Medical Technicians",
+                "date": "March 2018"
+            },
+            {
+                "name": "BLS/CPR",
+                "org": "American Heart Association",
+                "date": "November 2017"
+            }
+        ],
+        "skills": [],
+        "languages": [],
+        "dates": {
+            "start": "November 2017",
+            "end": "May 2018"
+        },
+        "completed": true
+    },
+    {
+        "program": "General Education",
+        "org": "Leeward Community College",
+        "certificates": [],
+        "skills": [],
+        "languages": [],
+        "dates": {
+            "start": "July 2015",
+            "end": "May 2016"
+        },
+        "completed": false
+    },
+    {
+        "program": "Geography and GPS Technology",
+        "org": "University of Northern Colorado",
+        "certificates": [],
+        "skills": [],
+        "languages": [],
+        "dates": {
+            "start": "July 2012",
+            "end": "March 2014"
+        },
+        "completed": false
+    },
+    {
+        "program": "Arts and Information Technology",
+        "org": "James Campbell High School",
+        "certificates": [
+            {
+                "name": "High School Diploma",
+                "org": "James Campbell High School",
+                "date": "May 2012"
+            }
+        ],
+        "skills": [],
+        "languages": [],
+        "dates": {
+            "start": "July 2009",
+            "end": "May 2012"
+        },
+        "completed": false
+    }
+]
