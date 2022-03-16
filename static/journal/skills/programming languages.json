@@ -1,0 +1,39 @@
+{
+    "story": [
+        "Languages and frameworks."
+    ],
+    "cats": [
+        "language",
+        "framework"
+    ],
+    "skills": [
+        {
+            "label": "HTML",
+            "cat": "language"
+        },
+        {
+            "label": "CSS",
+            "cat": "language"
+        },
+        {
+            "label": "Bootstrap",
+            "cat": "framework"
+        },
+        {
+            "label": "javaScript",
+            "cat": "language"
+        },
+        {
+            "label": "python",
+            "cat": "language"
+        },
+        {
+            "label": "flask",
+            "cat": "framework"
+        },
+        {
+            "label": "django",
+            "cat": "framework"
+        }
+    ]
+}

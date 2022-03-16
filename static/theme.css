@@ -22,6 +22,10 @@ body {
 .bg-ocean {
   background-color: var(--ocean);
 }
+a:any-link:hover,
+.pseudo-link:hover {
+  color: var(--wave);
+}
 a:any-link,
 .pseudo-link {
   color: var(--sand);
@@ -31,7 +35,21 @@ a:any-link,
 .home-link {
   color: var(--stone) !important;
 }
+p {
+  text-indent: 1rem;
+}
 
 li {
   list-style: none;
+}
+
+.i {
+  font-style: italic;
+}
+
+summary {
+  font-size: 15px;
+}
+details>li {
+  font-size: 13px;
 }

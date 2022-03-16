@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austen C. Myers</title>
+    <!-- Import Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='bootstrap/bootstrap.css') }}">
+    <!-- Import Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='theme.css') }}" />
+    <!-- Prevent "favicon.ico 404 error in console:" -->
+    <link rel="shortcut icon" href="#">
+
+</head>
+
+<body class="bg-void container p-4">
+    <header class="row border-bottom p-2">
+        <section id="title-bar" class="col d-flex align-items-center">
+            <h1>{{ Title.title() }}</h1>
+        </section>
+        <section id="link-bar" class="col d-flex align-items-center justify-content-end gap-2">
+            {% for link in links %}
+            <a href="{{ link.url }}" target="_blank">{{ link.label }}</a>
+            {% endfor %}
+        </section>
+    </header>
+    <nav class="row border-bottom p-1">
+        {% for section in sections %}
+        <li id="nav-bar" class="col text-center">
+            <a href="/{{ section.label }}">{{ section.label.title() }}</a>
+        </li>
+        {% endfor %}
+    </nav>
+    <main class="container p-2">
+        <header class="row text-center border-bottom">
+            {% if section %}
+            <h1>{{ section.Title.title() }}</h1>
+            {% else %}
+            <h6>{{ Subtitle.title() }}</h6>
+
+            {% endif %}
+        </header>
+        <main class="row p-1">
+            <section id="section-nav" class="col pt-1">
+                {% if section %}
+                {% for entry in section.entries %}
+                <li>
+                    <a class="pseudo-link" onclick="render(
+                        '{{section.Title}}',
+                        '{{entry.Title}}'
+                        )">
+                        {{ entry.Title.title() }}
+                    </a>
+                </li>
+                {% endfor %}
+                {% endif %}
+            </section>
+            <section id="entry" class="col-8">
+                <header class="row text-center">
+                    <h3 id="entry-title" class="text-capitalize border-bottom">
+                        about
+                    </h3>
+                </header>
+                <main class="row d-flex flex-column text-center">
+                    <i>
+                        <small id="entry-dates" class="text-capitalize"></small>
+                    </i>
+                    <section id="entry-content" class="text-start">
+
+                        {{description}}
+
+                    </section>
+                    <section id="entry-lists"></section>
+                </main>
+            </section>
+        </main>
+    </main>
+    <footer class="row">
+        <section id="copywrite" class="col"></section>
+        <section id="credits" class="col"></section>
+        <section id="contact" class="col"></section>
+    </footer>
+
+</body>
+<!-- Import JS -->
+<script src="{{ url_for ('static', filename='app/app.js') }}"></script>
+
+</html>

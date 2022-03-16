@@ -1,0 +1,85 @@
+{
+    "story": [
+        "I served in the Idaho Army National Guard for 4 years."
+    ],
+    "dates": {
+        "start": {
+            "month": "february",
+            "day": "16",
+            "year": "2017"
+        },
+        "end": {
+            "month": "december",
+            "day": "20",
+            "year": "2021"
+        }
+    },
+    "positions": [
+        {
+            "Title": "soldier",
+            "employer": "idaho army national guard",
+            "link": "https://www.imd.idaho.gov/idaho-army-national-guard/",
+            "location": {
+                "address": "gowen field",
+                "city": "boise",
+                "state": "idaho"
+            },
+            "dates": {
+                "start": {
+                    "month": "november",
+                    "day": "17",
+                    "year": "2017"
+                },
+                "end": {
+                    "month": "december",
+                    "day": "20",
+                    "year": "2021"
+                }
+            }
+        },
+        {
+            "Title": "combat medic",
+            "employer": "idaho army national guard",
+            "link": "https://www.imd.idaho.gov/idaho-army-national-guard/",
+            "location": {
+                "address": "gowen field",
+                "city": "boise",
+                "state": "idaho"
+            },
+            "dates": {
+                "start": {
+                    "month": "may",
+                    "day": "20",
+                    "year": "2018"
+                },
+                "end": {
+                    "month": "december",
+                    "day": "20",
+                    "year": "2021"
+                }
+            }
+        },
+        {
+            "Title": "biomedical equipment specialist",
+            "employer": "idaho army national guard",
+            "link": "https://www.imd.idaho.gov/idaho-army-national-guard/",
+            "location": {
+                "address": "gowen field",
+                "city": "boise",
+                "state": "idaho"
+            },
+            "dates": {
+                "start": {
+                    "month": "june",
+                    "day": "12",
+                    "year": "2020"
+                },
+                "end": {
+                    "month": "december",
+                    "day": "20",
+                    "year": "2021"
+                }
+            }
+        }
+    ]
+}

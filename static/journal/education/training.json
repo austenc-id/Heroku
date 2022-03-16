@@ -1,0 +1,29 @@
+{
+    "story": [
+        "Job specific and hands on training."
+    ],
+    "programs": [
+        {
+            "Title": "biomedical equipment repair & maintenance",
+            "provider": "medical education & training campus",
+            "link": "https://www.metc.mil/Academics/Programs/Healthcare-Support-Services/Biomedical-Equipment-Technician/",
+            "location": {
+                "address": "fort sam houston",
+                "city": "san antonio",
+                "state": "texas"
+            },
+            "dates": {
+                "start": {
+                    "month": "august",
+                    "day": "04",
+                    "year": "2019"
+                },
+                "end": {
+                    "month": "june",
+                    "day": "12",
+                    "year": "2020"
+                }
+            }
+        }
+    ]
+}
