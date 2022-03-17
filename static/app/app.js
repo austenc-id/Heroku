@@ -34,6 +34,13 @@ class Program {
         this.address = this.location.address
         this.city = this.location.city
         this.state = this.location.state
+        this.certificate = data.certificate
+        if (this.certificate.graduated) {
+            this.hidden = ''
+        }
+        else {
+            this.hidden = 'visually-hidden'
+        }
     }
     getTemplate() {
         return `
@@ -42,6 +49,7 @@ class Program {
             <li class="border-top border-start border-end">
                 <a href="${this.link}" target="_blank">${this.provider}</a>
             </li>
+            <li class="border-start border-end ${this.hidden}">${this.certificate.Title}</li>
             <li class="border-start border-end">${this.city}, ${this.state}</li>
             <li class="border-start border-end border-bottom">${this.start} - ${this.end}</li>
         </details>
@@ -65,7 +73,7 @@ function render(section, label) {
                 document.getElementById('entry-dates').innerHTML = dates
                 let positions = entry.positions
                 document.getElementById('entry-lists').innerHTML
-                    += `
+                    = `
                         <section id="positions">
                         <h5>Positions</h5>
                         </section>
@@ -81,7 +89,7 @@ function render(section, label) {
             if (section === 'education') {
                 let programs = entry.programs
                 document.getElementById('entry-lists').innerHTML
-                    += `
+                    = `
                     <section id="programs">
                     <h5>Programs</h5>
                     </section>
@@ -96,7 +104,7 @@ function render(section, label) {
             if (section === 'skills') {
                 let skills = entry.skills
                 document.getElementById('entry-lists').innerHTML
-                    += `
+                    = `
                 <section id="skills" class="text-capitalize">
 
                 </section>
@@ -105,7 +113,7 @@ function render(section, label) {
                 for (let i = 0; i < cats.length; i++) {
                     let cat = cats[i];
                     document.getElementById('skills').innerHTML
-                        += `<h5>${cat}s</h5>
+                        += `<h5>${cat}</h5>
                             <section id="${cat}" class="border mb-3"></li>`
                 }
                 for (let i = 0; i < skills.length; i++) {

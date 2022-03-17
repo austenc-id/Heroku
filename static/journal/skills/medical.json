@@ -1,0 +1,19 @@
+{
+    "story": [
+        "Emergency and clinical medicine."
+    ],
+    "cats": [
+        "emergency",
+        "clinical"
+    ],
+    "skills": [
+        {
+            "label": "medical terminology",
+            "cat": "clinical"
+        },
+        {
+            "label": "triage",
+            "cat": "emergency"
+        }
+    ]
+}

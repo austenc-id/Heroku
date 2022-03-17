@@ -17,12 +17,13 @@
 
 <body class="bg-void container p-4">
     <header class="row border-bottom p-2">
-        <section id="title-bar" class="col d-flex align-items-center">
+        <section id="title-bar" class="col-9">
             <h1>{{ Title.title() }}</h1>
+            <h6>{{ Subtitle.title() }}</h6>
         </section>
-        <section id="link-bar" class="col d-flex align-items-center justify-content-end gap-2">
+        <section id="link-bar" class="col text-end">
             {% for link in links %}
-            <a href="{{ link.url }}" target="_blank">{{ link.label }}</a>
+            <li><a href="{{ link.url }}" target="_blank">{{ link.label }}</a></li>
             {% endfor %}
         </section>
     </header>
@@ -34,53 +35,16 @@
         {% endfor %}
     </nav>
     <main class="container p-2">
-        <header class="row text-center border-bottom">
-            {% if section %}
-            <h1>{{ section.Title.title() }}</h1>
-            {% else %}
-            <h6>{{ Subtitle.title() }}</h6>
-
-            {% endif %}
-        </header>
-        <main class="row p-1">
-            <section id="section-nav" class="col pt-1">
-                {% if section %}
-                {% for entry in section.entries %}
-                <li>
-                    <a class="pseudo-link" onclick="render(
-                        '{{section.Title}}',
-                        '{{entry.Title}}'
-                        )">
-                        {{ entry.Title.title() }}
-                    </a>
-                </li>
-                {% endfor %}
-                {% endif %}
-            </section>
-            <section id="entry" class="col-8">
-                <header class="row text-center">
-                    <h3 id="entry-title" class="text-capitalize border-bottom">
-                        about
-                    </h3>
-                </header>
-                <main class="row d-flex flex-column text-center">
-                    <i>
-                        <small id="entry-dates" class="text-capitalize"></small>
-                    </i>
-                    <section id="entry-content" class="text-start">
-
-                        {{description}}
-
-                    </section>
-                    <section id="entry-lists"></section>
-                </main>
-            </section>
+        {% block page %}{% endblock %}
         </main>
-    </main>
-    <footer class="row">
-        <section id="copywrite" class="col"></section>
-        <section id="credits" class="col"></section>
-        <section id="contact" class="col"></section>
+        <footer class="row">
+            <section id="copywrite" class="col text-start">© acmf 2022</section>
+            <section id="credits" class="col-6 text-center">
+                <span>Built with: <br>Flask, JavaScript, and Bootstrap.</span>
+            </section>
+        <section id="contact" class="col text-end">
+            <a href="">message</a>
+        </section>
     </footer>
 
 </body>

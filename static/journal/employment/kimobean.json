@@ -1,0 +1,41 @@
+{
+    "story": [
+        "Small coffee shop on the Leeward Community College campus."
+    ],
+    "dates": {
+        "start": {
+            "month": "january",
+            "day": "07",
+            "year": "2016"
+        },
+        "end": {
+            "month": "may",
+            "day": "05",
+            "year": "2018"
+        }
+    },
+    "positions": [
+        {
+            "Title": "barista",
+            "employer": "kimobean coffee company",
+            "link": "http://www.kimobean.com/about_us.html",
+            "location": {
+                "address": "leeward community college",
+                "city": "pearl city",
+                "state": "hawai'i"
+            },
+            "dates": {
+                "start": {
+                    "month": "january",
+                    "day": "07",
+                    "year": "2016"
+                },
+                "end": {
+                    "month": "may",
+                    "day": "05",
+                    "year": "2018"
+                }
+            }
+        }
+    ]
+}

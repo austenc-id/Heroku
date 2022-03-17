@@ -23,7 +23,11 @@
                     "day": "12",
                     "year": "2020"
                 }
-            }
+            },
+            "certificate": {
+                "Title": "MOS Qualification",
+                "graduated": true
+                }
         }
     ]
 }

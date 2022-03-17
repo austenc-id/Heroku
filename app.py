@@ -4,12 +4,9 @@ from flask import (
     )
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    context = {
+context = {
         'Title': 'Austen C. Myers',
         'Subtitle': 'Professional Profile',
-        "description": "Have a look around.",
         'links': [
             {
             'label': 'Github',
@@ -39,184 +36,67 @@ def home():
             },
         ]
     }
-    return render('base.html', **context)
+
+@app.route('/')
+def home():
+    home = {
+        'Title': 'home',
+        "description": "Have a look around.",
+
+    }
+    return render('page.html', **context, section=home)
 
 @app.route('/bio')
 def bio():
-    context = {
-        'Title': 'Austen C. Myers',
-        'Subtitle': 'Professional Profile',
-        "description": "Just a little about me.",
-        'links': [
-            {
-            'label': 'Github',
-            'url': 'https://github.com/austenc-id'
-            },
-            {
-            'label': 'LinkedIn',
-            'url': 'https://www.linkedin.com/in/austenc-id/'
-            },
-            {
-            'label': 'Resume',
-            'url': 'assets/documents/resume.pdf'
-            }
-        ],
-        'sections': [
-            {
-                'label': 'bio'
-            },
-            {
-                'label': 'employment'
-            },
-            {
-                'label': 'education'
-            },
-            {
-                'label': 'skills'
-            },
-        ]
-    }
     bio = {
         'Title': 'bio',
+        "description": "Just a little about me.",
         'entries': [
-            {
-                'Title': 'geography'
-            }
+            'ambitions',
+            'interests',
+            'locations',
+            'family'
             ]
     }
-    return render('base.html', **context, section=bio)
+    return render('page.html', **context, section=bio)
 
 @app.route('/employment')
 def employment():
-    context = {
-        'Title': 'Austen C. Myers',
-        'Subtitle': 'Professional Profile',
-        "description": "Where I've worked.",
-        'links': [
-            {
-            'label': 'Github',
-            'url': 'https://github.com/austenc-id'
-            },
-            {
-            'label': 'LinkedIn',
-            'url': 'https://www.linkedin.com/in/austenc-id/'
-            },
-            {
-            'label': 'Resume',
-            'url': 'assets/documents/resume.pdf'
-            }
-        ],
-        'sections': [
-            {
-                'label': 'bio'
-            },
-            {
-                'label': 'employment'
-            },
-            {
-                'label': 'education'
-            },
-            {
-                'label': 'skills'
-            },
-        ]
-    }
     employment = {
         'Title': 'employment',
+        "description": "Where I've worked.",
         'entries': [
-            {
-                'Title': 'national guard'
-            }
+            'national guard',
+            'conduent',
+            'sun valley resort',
+            'kimobean'
             ]
     }
-    return render('base.html', **context, section=employment)
+    return render('page.html', **context, section=employment)
 
 @app.route('/education')
 def education():
-    context = {
-        'Title': 'Austen C. Myers',
-        'Subtitle': 'Professional Profile',
-        "description": "What I've been taught.",
-        'links': [
-            {
-            'label': 'Github',
-            'url': 'https://github.com/austenc-id'
-            },
-            {
-            'label': 'LinkedIn',
-            'url': 'https://www.linkedin.com/in/austenc-id/'
-            },
-            {
-            'label': 'Resume',
-            'url': 'assets/documents/resume.pdf'
-            }
-        ],
-        'sections': [
-            {
-                'label': 'bio'
-            },
-            {
-                'label': 'employment'
-            },
-            {
-                'label': 'education'
-            },
-            {
-                'label': 'skills'
-            },
-        ]
-    }
     education = {
         'Title': 'education',
+        "description": "What I've been taught.",
         'entries': [
-            {
-                'Title': 'training'
-            }
+            'training',
+            'academic',
+            'independent'
             ]
     }
-    return render('base.html', **context, section=education)
+    return render('page.html', **context, section=education)
 
 @app.route('/skills')
 def skills():
-    context = {
-        'Title': 'Austen C. Myers',
-        'Subtitle': 'Professional Profile',
-        "description": "Things I've picked up.",
-        'links': [
-            {
-            'label': 'Github',
-            'url': 'https://github.com/austenc-id'
-            },
-            {
-            'label': 'LinkedIn',
-            'url': 'https://www.linkedin.com/in/austenc-id/'
-            },
-            {
-            'label': 'Resume',
-            'url': 'assets/documents/resume.pdf'
-            }
-        ],
-        'sections': [
-            {
-                'label': 'bio'
-            },
-            {
-                'label': 'employment'
-            },
-            {
-                'label': 'education'
-            },
-            {
-                'label': 'skills'
-            },
-        ]
-    }
     skills = {
         'Title': 'skills',
+        "description": "Things I've picked up.",
         'entries': [
-            {
-                'Title': 'programming languages'
-            }
+            'programming',
+            'technology',
+            'medical',
+            'food service',
             ]
     }
-    return render('base.html', **context, section=skills)
+    return render('page.html', **context, section=skills)

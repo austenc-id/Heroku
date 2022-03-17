@@ -1,0 +1,14 @@
+{
+    "story": [
+        "Technical skills used to repair or maintain devices."
+    ],
+    "cats": [
+        "biomedical"
+    ],
+    "skills": [
+        {
+            "label": "radiologic imaging",
+            "cat": "biomedical"
+        }
+    ]
+}

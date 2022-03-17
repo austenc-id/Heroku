@@ -1,0 +1,14 @@
+{
+    "story": [
+        "Solving problems and helping people."
+    ],
+    "cats": [
+        "customer service"
+    ],
+    "skills": [
+        {
+            "label": "order accuracy",
+            "cat": "customer service"
+        }
+    ]
+}

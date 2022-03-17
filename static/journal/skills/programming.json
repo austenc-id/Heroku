@@ -3,37 +3,37 @@
         "Languages and frameworks."
     ],
     "cats": [
-        "language",
-        "framework"
+        "languages",
+        "frameworks"
     ],
     "skills": [
         {
             "label": "HTML",
-            "cat": "language"
+            "cat": "languages"
         },
         {
             "label": "CSS",
-            "cat": "language"
+            "cat": "languages"
         },
         {
             "label": "Bootstrap",
-            "cat": "framework"
+            "cat": "frameworks"
         },
         {
             "label": "javaScript",
-            "cat": "language"
+            "cat": "languages"
         },
         {
             "label": "python",
-            "cat": "language"
+            "cat": "languages"
         },
         {
             "label": "flask",
-            "cat": "framework"
+            "cat": "frameworks"
         },
         {
             "label": "django",
-            "cat": "framework"
+            "cat": "frameworks"
         }
     ]
 }
