@@ -1,0 +1,34 @@
+{% block entry %}
+{% for entry in entries %}
+<div id="{{entry.label}}" class="visually-hidden entries border-ocean p-2 m-2">
+    <h1 class="border-bottom text-capitalize">{{entry.label}}</h1>
+    <section id="entry-content" class="text-center">
+        <p>{{entry.blurb}}</p>
+        <small class="i border-bottom">{{entry.start}} - {{entry.end}}</small>
+        <h5 class="text-capitalize mt-2">{{journal.list_label}}</h5>
+        {% for position in entry.positions.all %}
+            <details class="text-capitalize me-1">
+                <summary>{{position.label}}</summary>
+                <li class="border-top border-start border-end">
+                    <a href="" target="_blank">{{position.employer}}</a>
+                </li>
+                <li class="border-start border-end">{{position.location}}</li>
+                <li class="i border-start border-end border-bottom">{{position.start}} - {{position.end}}</li>
+            </details>
+        {% endfor %}
+        {% for program in entry.programs.all %}
+            <details class="text-capitalize me-1">
+                <summary>{{program.label}}</summary>
+                <li class="border-top border-start border-end">
+                    <a href="" target="_blank">{{program.provider}}</a>
+                </li>
+                <li class="border-start border-end">{{program.location}}</li>
+                <li class="i border-start border-end border-bottom">
+                    {{program.start}} - {{program.end}}
+                </li>
+            </details>
+        {% endfor %}
+    </section>
+</div>
+{% endfor %}
+{% endblock entry %}

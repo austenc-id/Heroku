@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austen C. Myers</title>
+    <!-- Prevent "favicon.ico 404 error in console:" -->
+    <link rel="shortcut icon" href="#">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'style/bootstrap.css' %}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'style/theme.css' %}">
+</head>
+
+<body class="bg-void container p-4">
+    <header class="row border-bottom p-2 text-capitalize">
+        {% include 'partials/header.html' %}
+        <!---->
+        {% block header %}{% endblock header %}
+    </header>
+    <nav class="row border-bottom p-1  text-capitalize">
+        {% include 'partials/navbar.html' %}
+        <!---->
+        {% block navbar %}{% endblock navbar %}
+    </nav>
+    <main class="row p-2">
+        {% block content %}{% endblock content %}
+    </main>
+    <footer class="row">
+        {% include 'partials/footer.html' %}
+        <!---->
+        {% block footer %}{% endblock footer %}
+    </footer>
+</body>
+<script src="static/scripts/app.js"></script>
+
+</html>

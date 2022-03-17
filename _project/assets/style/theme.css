@@ -35,10 +35,9 @@ a:any-link,
 .home-link {
   color: var(--stone) !important;
 }
-p {
-  text-indent: 1rem;
+.border-ocean {
+  border: 2px solid var(--ocean);
 }
-
 li {
   list-style: none;
 }

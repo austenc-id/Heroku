@@ -1,0 +1,9 @@
+{% block navbar %}
+<!---->
+{% for section in sections %}
+<li id="nav-bar" class="col text-center">
+    <a href="/{{section.label}}">{{ section.label }}</a>
+</li>
+{% endfor %}
+<!---->
+{% endblock navbar %}
