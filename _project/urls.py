@@ -18,14 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # app_name = 'home'
-    path('', include('_home.urls')),
-    # app_name = 'bio'
-    path('bio', include('_bio.urls')),
-    # app_name = 'work'
-    path('employment', include('_employment.urls')),
-    # app_name = 'edu'
-    path('education', include('_education.urls')),
-    # app_name = 'skills'
-    path('skills', include('_skills.urls')),
+    path('', include('app.urls'))
 ]

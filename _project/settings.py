@@ -14,13 +14,13 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# D:\Code\Repositories\resume
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-oi)elt09w1$)&e^klki2rbh(_$o++i%7@0efwd57n_i43*5w8c'
+SECRET_KEY = 'django-insecure-6u4b03r_e2h-05*hvi)!$@d3!0#fuu%o+k6n%%(fvnhudrkm&6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,12 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # project apps
-    '_home',
-    '_bio',
-    '_employment',
-    '_education',
-    '_skills',
+    'app'
 ]
 
 MIDDLEWARE = [
@@ -60,7 +55,7 @@ ROOT_URLCONF = '_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / '_project/assets/templates'],
+        'DIRS': [BASE_DIR / '_project/assets/templates', BASE_DIR / 'app/assets/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,7 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [ BASE_DIR / '_project/assets']
+STATICFILES_DIRS = [ BASE_DIR / '_project/assets',BASE_DIR / 'app/assets']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

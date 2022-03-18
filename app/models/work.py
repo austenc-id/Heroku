@@ -1,6 +1,6 @@
-from django.db.models import *
+from django.db.models import ( Model, CharField, URLField, TextField,
+                                DateField, ManyToManyField )
 
-# Create your models here.
 class Employer(Model):
     label = CharField(max_length=14)
     link = URLField()
@@ -10,8 +10,7 @@ class Employer(Model):
     city = CharField(max_length=16, blank=True)
     state = CharField(max_length=16, blank=True)
     state_code = CharField(max_length=2, blank=True)
-    positions = ManyToManyField('Position', blank=True,
-                            related_name='employer_positions')
+    positions = ManyToManyField('Position', blank=True, related_name='employer_positions')
     def __str__(self):
         return self.label
 
@@ -21,8 +20,7 @@ class Position(Model):
     blurb = CharField(max_length=16)
     start = DateField()
     end = DateField()
-    duties = ManyToManyField('Duty', blank=True,
-                                related_name='position_duties')
+    duties = ManyToManyField('Duty', blank=True, related_name='position_duties')
     def __str__(self):
         return self.label
 

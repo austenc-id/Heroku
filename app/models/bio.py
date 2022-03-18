@@ -1,10 +1,8 @@
-from django.db.models import *
+from django.db.models import (Model, CharField, TextField)
 
-# Create your models here.
-
-class Entry(Model):
+class Story(Model):
     class Meta:
-        verbose_name_plural = 'Entries'
+        verbose_name_plural = 'Stories'
     label = CharField(max_length=14)
     blurb = TextField()
     def __str__(self):
