@@ -12,6 +12,8 @@
 ## Project Code
 
 > Meant to make it easier to compare code cross-app.
+>
+> Last update: 17MAR2022 20:00
 
 ### Models
 
@@ -22,11 +24,11 @@
     <ul><h3>Defines relevant urls to external websites.<h3></ul>
 
 ```python
-    class Link(Model):
-        label = CharField(max_length=48)
-        url = URLField()
-        def __str__(self):
-            return self.label
+ class Link(Model):
+    label = CharField(max_length=48)
+    url = URLField()
+    def __str__(self):
+        return self.label
 ```
 </details></ul>
 <ul><details>
@@ -34,12 +36,12 @@
     <ul><h3>One page for each app.<h3></ul>
 
 ```python
-    class Page(Model):
-        label = CharField(max_length=24)
-        url = CharField(max_length=24)
-        blurb = TextField()
-        def __str__(self):
-            return self.label
+class Page(Model):
+    label = CharField(max_length=24)
+    url = CharField(max_length=24)
+    blurb = TextField()
+    def __str__(self):
+        return self.label
 ```
 </details></ul>
 <ul><details>
@@ -47,11 +49,11 @@
     <ul><h3>Documents than can be made available for download.<h3></ul>
 
 ```python
-    class Document(Model):
-        label = CharField(max_length=48)
-        file = FileField(upload_to='documents')
-        def __str__(self):
-            return self.label
+class Document(Model):
+    label = CharField(max_length=48)
+    file = FileField(upload_to='documents')
+    def __str__(self):
+        return self.label
 ```
 </details></ul>
 </details></ul>
