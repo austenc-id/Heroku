@@ -4,20 +4,20 @@
     <h1>{{ page.label }}</h1>
 </header>
 <nav id="section-nav" class="col-4 text-capitalize">
-{% for category in categories %}
-    <li class="pseudo-link  mt-2" onclick="show('{{category.label}}')">{{category}}</li>
+{% for provider in providers %}
+    <li class="pseudo-link  mt-2" onclick="show('{{provider.label}}')">{{provider}}</li>
 {% endfor %}
 </nav>
-<main id="education-categories" class="col-8 text-center">
+<main id="education-providers" class="col-8 text-center">
     <div class="entries">
         <h3 class="text-capitalize">About</h3>
         <p>{{page.blurb}}</p>
     </div>
-    {% for category in categories %}
-    <div id="{{category.label}}" class="entries visually-hidden">
-        <h3 class="text-capitalize">{{category.label}}</h3>
-        <p>{{category.blurb}}</p>
-        {% for course in category.courses.all %}
+    {% for provider in providers %}
+    <div id="{{provider.label}}" class="entries visually-hidden">
+        <h3 class="text-capitalize">{{provider.label}}</h3>
+        <p>{{provider.blurb}}</p>
+        {% for course in provider.courses.all %}
             <details>
                 <summary>{{course.label}}</summary>
                 <li class="i">{{course.start}} - {{course.end}}</li>
@@ -34,7 +34,6 @@
     </div>
     {% endfor %}
 </main>
-<script>
+<script src="{% static 'scripts/app.js' %}"></script>
 
-</script>
 {% endblock content %}

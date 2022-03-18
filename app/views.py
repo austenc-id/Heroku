@@ -40,6 +40,7 @@ def skills(Request):
     from .models.skills import Skill
     context.update({
         'page': Page.objects.get(label='skills'),
+        'categories': '',
         'skills': Skill.objects.all(),
     })
     return render(Request, 'skills.html', context)

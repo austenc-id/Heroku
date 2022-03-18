@@ -2,3 +2,4 @@ django_env
 db.sqlite3
 __pycache__
 migrations
+project_secrets.py

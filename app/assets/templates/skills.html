@@ -18,7 +18,7 @@
             <h3 class="text-capitalize">{{category.label}}</h3>
             <p>{{category.blurb}}</p>
             <div class="border">
-                {% for skill in category.skills.all|dictsortreversed:"rank" %}
+                {% for skill in skills|dictsortreversed:"rank" %}
                 <li>{{skill.label}} - {{skill.rank}}</li>
                 {% endfor %}
             </div>
@@ -28,7 +28,6 @@
         <small class="i">Each point indicates the number of projects I've successfully demonstrated the skill.</small>
     </div>
 </main>
-<script>
+<script src="{% static 'scripts/app.js' %}"></script>
 
-</script>
 {% endblock content %}
