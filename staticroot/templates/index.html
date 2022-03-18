@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block index %}
+<header class="row border-bottom p-2">
+    {% include 'partials/header.html' %}
+    <!---->
+    {% block header %}{% endblock header %}
+</header>
+<nav class="row border-bottom p-1">
+    {% include 'partials/navbar.html' %}
+    <!---->
+    {% block navbar %}{% endblock navbar %}
+</nav>
+<main class="row p-2">
+    {% block content %}{% endblock content %}
+</main>
+<footer class="row">
+    {% include 'partials/footer.html' %}
+    <!---->
+    {% block footer %}{% endblock footer %}
+</footer>
+{% endblock index %}

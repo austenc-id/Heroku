@@ -1,0 +1,11 @@
+{% block header %}
+<section id="titles" class="col-9">
+    <h1>Austen C. Myers</h1>
+    <h6>Professional Profile</h6>
+</section>
+<section id="links" class="col text-end">
+    {% for link in links %}
+    <li><a href="{{ link.url }}" target="_blank">{{ link.label }}</a></li>
+    {% endfor %}
+</section>
+{% endblock header %}

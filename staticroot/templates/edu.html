@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% block content %}
+<header class="col-12 text-center text-capitalize border-bottom">
+    <h1>{{ page.label }}</h1>
+</header>
+<nav id="section-nav" class="col-4 text-capitalize">
+{% for provider in providers %}
+    <li class="pseudo-link  mt-2" onclick="show('{{provider.label}}')">{{provider}}</li>
+{% endfor %}
+</nav>
+<main id="education-providers" class="col-8 text-center">
+    <div class="entries">
+        <h3 class="text-capitalize">About</h3>
+        <p>{{page.blurb}}</p>
+    </div>
+    {% for provider in providers %}
+    <div id="{{provider.label}}" class="entries visually-hidden">
+        <h3 class="text-capitalize">{{provider.label}}</h3>
+        <p>{{provider.blurb}}</p>
+        {% for course in provider.courses.all %}
+            <details>
+                <summary>{{course.label}}</summary>
+                <li class="i">{{course.start}} - {{course.end}}</li>
+                {% if course.graduated %}
+                {% for cert in course.certificates.all %}
+                <details>
+                    <summary>{{cert.label}}</summary>
+                    <li>{{cert.effective}}</li>
+                </details>
+                {% endfor %}
+                {% endif %}
+            </details>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</main>
+<script src="{% static 'scripts/app.js' %}"></script>
+
+{% endblock content %}
