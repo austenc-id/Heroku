@@ -31,15 +31,10 @@ class Course(Model):
 class Certificate(Model):
     label = CharField(max_length=48)
     provider = ForeignKey('Provider', null=True, on_delete=SET_NULL,
-                                related_name='course_provider')
+                                related_name='cert_provider')
     link = URLField()
     effective = DateField()
     expires = DateField()
     document = FileField(upload_to='documents/certificates', blank=True)
-    def __str__(self):
-        return self.label
-
-class Provider(Model):
-    label = CharField(max_length=48)
     def __str__(self):
         return self.label
