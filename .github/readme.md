@@ -13,7 +13,7 @@
 
 > Meant to make it easier to compare code cross-app.
 >
-> Last update: 17MAR2022 20:00
+> Last update: 17-MAR-2022 20:00
 
 ### Models
 
