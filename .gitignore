@@ -1,2 +1,5 @@
 env
-.github
+db.sqlite3
+draft.py
+__pycache__
+migrations

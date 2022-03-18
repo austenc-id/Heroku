@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% block content %}
+<header class="col-12 text-center text-capitalize border-bottom">
+    <h1>{{ page.label }}</h1>
+</header>
+<nav id="section-nav" class="col-4 text-capitalize">
+{% for category in categories %}
+    <li class="pseudo-link  mt-2" onclick="show('{{category.label}}')">{{category}}</li>
+{% endfor %}
+</nav>
+<main id="education-categories" class="col-8 text-center">
+    <div class="entries">
+        <h3 class="text-capitalize">About</h3>
+        <p>{{page.blurb}}</p>
+    </div>
+    {% for category in categories %}
+    <div id="{{category.label}}" class="entries visually-hidden">
+        <h3 class="text-capitalize">{{category.label}}</h3>
+        <p>{{category.blurb}}</p>
+        {% for course in category.courses.all %}
+            <details>
+                <summary>{{course.label}}</summary>
+                <li class="i">{{course.start}} - {{course.end}}</li>
+                {% if course.graduated %}
+                {% for cert in course.certificates.all %}
+                <details>
+                    <summary>{{cert.label}}</summary>
+                    <li>{{cert.effective}}</li>
+                </details>
+                {% endfor %}
+                {% endif %}
+            </details>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</main>
+<script>
+
+</script>
+{% endblock content %}

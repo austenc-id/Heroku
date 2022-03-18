@@ -1,8 +1,8 @@
 {% block navbar %}
 <!---->
-{% for section in sections %}
-<li id="nav-bar" class="col text-center">
-    <a href="/{{section.label}}">{{ section.label }}</a>
+{% for page in pages %}
+<li id="nav-bar" class="col text-center text-capitalize">
+    <a id="{{page.label}}-link" href="{% url page.url %}">{{ page.label }}</a>
 </li>
 {% endfor %}
 <!---->

@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # project apps
-    '_resume'
+    '_home',
+    '_bio',
+    '_employment',
+    '_education',
+    '_skills',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +60,7 @@ ROOT_URLCONF = '_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / '_project/assets/templates', BASE_DIR / '_resume/templates'],
+        'DIRS': [ BASE_DIR / '_project/assets/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
