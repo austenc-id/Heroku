@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<header class="row text-center border-bottom">
+    <h2>Django</h2>
+</header>
+<nav class="row border-bottom p-2">
+    <navitem class="col-2 m-1">
+        <a href="{% url 'home:dj_postgres' %}">Postgresql</a>
+    </navitem>
+    <navitem class="col-2 m-1">
+        <a href="{% url 'home:dj_heroku' %}">Heroku</a>
+    </navitem>
+</nav>
+<main class="container">
+    {% block steps %}{% endblock steps %}
+</main>
+
+{% endblock content %}

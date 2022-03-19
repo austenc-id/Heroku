@@ -1,149 +1,22 @@
 {% extends 'base.html' %}
 {% block index %}
-<header class="text-center">
-    <h1>Hello, Heroku World!</h1>
-    <h3>Steps</h3>
+<header class="row border-bottom pb-2">
+    <h1>Reference</h1>
 </header>
-<ol>
-    <li>create a project directory</li>
-    <li>run bash
-        <ol>
-            <li><code class="p-3">python -m venv env</code></li>
-            <li><code class="p-3">source env/scripts/activate</code></li>
-            <li><code class="p-3">pip install django django-heroku gunicorn</code></li>
-            <li><code class="p-3">pip freeze > requirements.txt</code></li>
-            <li><code class="p-3">git init</code></li>
-            <li><code class="p-3">touch Procfile runtime.txt app.json</code></li>
-            <li><code class="p-3">django-admin startproject 'project_name' .</code></li>
-            <li><code class="p-3">mkdir assets assets/templates assets/style assets/scripts assets/images/ assets/images/icons/</code></li>
-            <li><code class="p-3">touch assets/templates/base.html assets/templates/index.html assets/style/theme.css assets/style/bootstrap.css assets/style/bootstrap.css.map 'project_name'/views.py .gitignore</code></li>
-            <li><code class="p-3">django-admin startapp 'app_name'</code></li>
-        </ol>
-    </li>
-    <li>open assets/templates/base.html
-        <br>
-        <code>insert html code here</code>
-    </li>
-    <li>open assets/templates/index.html
-        <br>
-        <code>insert html code here</code>
-    </li>
-    <li>open project/urls.py
-        <pre><code>
-    from django.urls import path, include
-    from .views import index
-
-    urlpatterns = [
-        path('admin/', admin.site.urls),
-        path('', index)
-        # path('', include('<app_name>.urls))
-        ]
-        </code></pre>
-    </li>
-    <li>open project/views.py
-        <pre><code>
-    from django.shortcuts import render
-
-    def index(Request):
-        return render(Request, 'index.html')
-        </code></pre>
-    </li>
-    <li>run psql terminal
-        <ol>
-            <li>set defaults</li>
-            <li>enter password</li>
-            <li><code>CREATE DATABASE 'project_name';</code></li>
-            <li><code>\c 'project_name';</code></li>
-        </ol>
-    </li>
-    <li>open project settings.py
-        <pre><code>
-    DATABASES = {
-        'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': '<project_name>',
-                'USER': 'postgres',
-                'PASSWORD': '<password>',
-                'HOST': 'localhost',
-                'PORT': '4000',
-            }
-        }
-    INSTALLED_APPS.append('<app_name>')
-    STATICFILES_DIRS = [BASE_DIR / 'assets']
-    STATIC_ROOT = BASE_DIR / 'staticroot'
-    TEMPLATES[0].update({'DIRS':[ BASE_DIR / 'assets/templates']})
-        </code></pre>
-    </li>
-    <li>open .gitignore
-        <pre><code>
-    env
-    __pycache__
-    migrations
-        </code></pre>
-    </li>
-    <li>run bash
-        <ol>
-            <li><code class="p-3">python manage.py makemigrations</code></li>
-            <li><code class="p-3">python manage.py migrate</code></li>
-            <li><code class="p-3">python manage.py createsuperuser</code></li>
-            <li><code class="p-3">python manage.py runserver 'port_number'</code></li>
-            <li><code class="p-3">heroku create 'app_name'</code></li>
-            <li><small class="i p-3">if heroku app not in .git/config</small>
-                <br>
-                <code class="p-3">heroku git:remote --app 'app_name'</code>
-            </li>
-        </ol>
-    </li>
-    <li>open runtime.txt
-        <code>python-'version'</code>
-    </li>
-    <li>open Procfile
-        <code>web: gunicorn 'project_name'.wsgi</code>
-    </li>
-    <li>open app.json
-        <pre><code>
-    {
-        "name": "Start on Heroku: Python",
-        "description": "A barebones Python app, which can easily be deployed to Heroku.",
-        "image": "heroku/python",
-        "repository": "https://github.com/heroku/python-getting-started",
-        "keywords": ["python", "django" ],
-        "addons": [ "heroku-postgresql" ],
-        "env": {
-          "SECRET_KEY": {
-            "description": "The secret key for the Django application.",
-            "generator": "secret"
-          }
-        },
-        "environments": {
-          "test": {
-            "scripts": {
-              "test-setup": "python manage.py collectstatic --noinput",
-              "test": "python manage.py test"
-            }
-          }
-        }
-      }
-        </code></pre>
-    </li>
-    <li>open project settings.py
-        <pre><code>
-    import django_heroku
-
-    ALLOWED_HOSTS = [
-        '<heroku_app_name>.herokuapp.com'
-    ]
-
-    django_heroku.settings(locals())
-        </code></pre>
-    </li>
-    <li>run bash
-        <ol>
-            <li><code class="p-3">git commit</code></li>
-            <li><code class="p-3">git push heroku main</code> or <code class="p-3">git push heroku 'branch_name':main</code></li>
-            <li><code class="p-3">heroku ps:scale web=1</code></li>
-            <li><code class="p-3">heroku open</code></li>
-        </ol>
-    </li>
-</ol>
+<nav class="row border-bottom pt-2">
+    <nav class="col-2">
+        <a href="{% url 'home:index' %}"><h5>Home</h5></a>
+    </nav>
+    <nav class="col-2">
+        <a href="{% url 'home:django' %}"><h5>Django</h5></a>
+    </nav>
+</nav>
+<main class="container border-bottom p-2">
+    {% block content %}{% endblock content %}
+</main>
+<footer class="row p-2">
+    <footer class="col">acmf 2022</footer>
+    <footer class="col-6 text-center">Django, Bootstrap</footer>
+    <footer class="col text-end">message</footer>
+</footer>
 {% endblock index %}
