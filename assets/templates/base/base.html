@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austen Myers</title>
+    <!-- Tab Icon" -->
+    <link rel="shortcut icon" href="{% static 'images/icons/site-tab.png' %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'style/bootstrap.css' %}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'style/theme.css' %}">
+</head>
+<body class="container p-4 bg-mocha">
+    {% block index %} {% endblock index %}
+</body>
+</html>

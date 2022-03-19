@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+{% block index %}
+<header class="row p-2 border-mocha">
+    <section class="col-8">
+        <h1>Austen C. Myers</h1>
+        <h6>Professional Profile</h6>
+    </section>
+    <section class="col text-end flex-center-col">
+        <a href="https://github.com/austenc-id">GitHub</a>
+        <br>
+        <a href="https://linkedin.com/in/austenc-id">LinkedIn</a>
+    </section>
+</header>
+<nav class="row p-2 pt-3 border-mocha-b">
+    <navitem class="col-2">
+        <a href="{% url 'home:index' %}"><h5>Home</h5></a>
+    </navitem>
+    <navitem class="col-2">
+        <a href="{% url 'bio:index' %}"><h5>Bio</h5></a>
+    </navitem>
+    {% comment %} <navitem class="col-2">
+        <a href="{% url 'work:index' %}"><h5>Employment</h5></a>
+    </navitem> {% endcomment %}
+    {% comment %} <navitem class="col-2">
+        <a href="{% url 'education:index' %}"><h5>Education</h5></a>
+    </navitem> {% endcomment %}
+    {% comment %} <navitem class="col-2">
+        <a href="{% url 'skills:index' %}"><h5>Skills</h5></a>
+    </navitem> {% endcomment %}
+</nav>
+<main class="container p-3">
+    <header class="row text-center border-mocha-b mb-3">
+        <h1 class="text-capitalize">{{page}}</h1>
+    </header>
+    {% block content %} {% endblock content %}
+</main>
+<footer class="row border-mocha-t">
+    <footer class="col"></footer>
+    <footer class="col-6 text-center"></footer>
+    <footer class="col text-end">
+        <a href="">django</a>
+        <br>
+        <a href="">bootstrap</a>
+        <br>
+        <a href="/admin">admin site</a>
+    </footer>
+</footer>
+{% endblock index %}

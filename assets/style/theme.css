@@ -1,0 +1,37 @@
+.bg-mocha {
+    color: #8b6969;
+    background-color: #352727;
+}
+.border-mocha {
+    border: 1px solid #8b6969;
+}
+.border-mocha-b {
+    border-bottom: 1px solid #8b6969;
+}
+.border-mocha-t {
+    border-top: 1px solid #8b6969;
+}
+.border-mocha-s {
+    border-left: 1px solid #8b6969;
+}
+.border-mocha-e {
+    border-right: 1px solid #8b6969;
+}
+.font-ocean {
+    color: #2a5e8f;
+}
+.font-wave {
+    color: #6d90b1;
+}
+.flex-center-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+li {
+    list-style: none;
+}
+a:any-link {
+    color: #468544;
+    text-decoration: none;
+}
