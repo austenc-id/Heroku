@@ -8,7 +8,7 @@
     - ```touch Procfile runtime.txt app.json```
     - ```django-admin startproject <project_name> .```
     - ```mkdir assets assets/templates assets/style assets/scripts assets/images/ assets/images/icons/```
-    - ```touch assets/templates/base.html assets/templates/index.html assets/style/theme.css assets/style/bootstrap.css assets/style/bootstrap.css.map <project_name>/views.py```
+    - ```touch assets/templates/base.html assets/templates/index.html assets/style/theme.css assets/style/bootstrap.css assets/style/bootstrap.css.map <project_name>/views.py .gitignore```
     - ```django-admin startapp <app_name>```
 3. open assets/templates/base.html
 ```html
@@ -53,6 +53,8 @@ urlpatterns = [
 ```
 6. open project/views.py
 ```python
+from django.shortcuts import render
+
 def index(Request):
     return render(Request, 'index.html')
 ```
@@ -94,8 +96,33 @@ def index(Request):
 11. open runtime.txt
     - ```python-<version>```
 12. open Procfile
-    - ```web: gunicorn <project_name>/_project.wsgi```
-13. open _project/settings.py
+    - ```web: gunicorn <project_name>.wsgi```
+13. open app.json
+```json
+{
+  "name": "Start on Heroku: Python",
+  "description": "A barebones Python app, which can easily be deployed to Heroku.",
+  "image": "heroku/python",
+  "repository": "https://github.com/heroku/python-getting-started",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
+```
+14. open _project/settings.py
     ```python
     import django_heroku
 
@@ -105,9 +132,9 @@ def index(Request):
 
     django_heroku.settings(locals())
     ```
-14. git commit
-15. figure out SECRET_KEY
-16. run bash
+15. git commit
+16. figure out SECRET_KEY
+17. run bash
     - ```git push heroku main```
     - or
     - ```git push heroku <branch_name>:main```
