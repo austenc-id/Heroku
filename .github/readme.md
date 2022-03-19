@@ -1,15 +1,66 @@
 1. create directory
 2. run bash
-    - ```djheroenv```
-    - ```djheroinit```
-    - ```djheroproj```
-    - ```cd <project_name>```
-    - ```djapp <app_name>```
-3. run psql terminal
+    - ```python -m venv env```
+    - ```source env/scripts/activate```
+    - ```pip install django django-heroku gunicorn```
+    - ```pip freeze > requirements.txt```
+    - ```git init```
+    - ```touch Procfile runtime.txt app.json```
+    - ```django-admin startproject <project_name> .```
+    - ```mkdir assets assets/templates assets/style assets/scripts assets/images/ assets/images/icons/```
+    - ```touch assets/templates/base.html assets/templates/index.html assets/style/theme.css assets/style/bootstrap.css assets/style/bootstrap.css.map <project_name>/views.py```
+    - ```django-admin startapp <app_name>```
+3. open assets/templates/base.html
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austen C. Myers</title>
+    <!-- Tab Icon" -->
+    <link rel="shortcut icon" href="{% static 'images/icons/site-tab.png' %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'style/bootstrap.css' %}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'style/theme.css' %}">
+</head>
+
+<body class="bg-void container p-4">
+    {% block index %}{% endblock index %}
+</body>
+
+</html>
+```
+4. open assets/templates/index.html
+```html
+{% extends 'base.html' %}
+{% block index %}
+{% endblock index %}
+```
+5. open project/urls.py
+```python
+from django.urls import path, include
+from .views import index
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', index)
+]
+```
+6. open project/views.py
+```python
+def index(Request):
+    return render(Request, 'index.html')
+```
+7. run psql terminal
     - enter psql password
     - ```CREATE DATABASE <project_name>;```
     - ```\c <project_name>;```
-4. open _project/settings.py
+8. open _project/settings.py
     ```python
     DATABASES = {
         'default': {
@@ -22,17 +73,17 @@
             }
         }
     INSTALLED_APPS.append('<app_name>')
-    STATICFILES_DIRS = [BASE_DIR / '_assets']
+    STATICFILES_DIRS = [BASE_DIR / 'assets']
     STATIC_ROOT = BASE_DIR / 'staticroot'
-    TEMPLATES[0].update({'DIRS':[ BASE_DIR / '_assets/templates']})
+    TEMPLATES[0].update({'DIRS':[ BASE_DIR / 'assets/templates']})
     ```
-5. open .gitignore
+9. open .gitignore
     ```
     env
     __pycache__
     migrations
     ```
-6. run bash
+10. run bash
     - ```djmake```
     - ```djmigrate```
     - ```djsuper```
@@ -40,11 +91,11 @@
     - ```heroku create <app_name>```
         - if heroku app not in .git/config:
         - ``` heroku git:remote --app <app_name>```
-7. open runtime.txt
+11. open runtime.txt
     - ```python-<version>```
-8. open Procfile
+12. open Procfile
     - ```web: gunicorn <project_name>/_project.wsgi```
-9. open _project/settings.py
+13. open _project/settings.py
     ```python
     import django_heroku
 
@@ -54,9 +105,9 @@
 
     django_heroku.settings(locals())
     ```
-10. git commit
-11. figure out SECRET_KEY
-12. run bash
+14. git commit
+15. figure out SECRET_KEY
+16. run bash
     - ```git push heroku main```
     - or
     - ```git push heroku <branch_name>:main```
