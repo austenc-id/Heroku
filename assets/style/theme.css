@@ -38,7 +38,7 @@ a:any-link,
 .border-ocean {
   border: 2px solid var(--ocean);
 }
-li {
+ul>li {
   list-style: none;
 }
 
