@@ -3,6 +3,8 @@
     - ```djheroenv```
     - ```djheroinit```
     - ```djheroproj```
+    - ```cd <project_name>```
+    - ```djapp <app_name>```
 3. run psql terminal
     - enter psql password
     - ```CREATE DATABASE <project_name>;```
@@ -19,6 +21,7 @@
                 'PORT': '4000',
             }
         }
+    INSTALLED_APPS.append('<app_name>')
     STATICFILES_DIRS = [BASE_DIR / '_assets']
     STATIC_ROOT = BASE_DIR / 'staticroot'
     TEMPLATES[0].update({'DIRS':[ BASE_DIR / '_assets/templates']})
@@ -32,12 +35,15 @@
 6. run bash
     - ```djmake```
     - ```djmigrate```
+    - ```djsuper```
     - ```djserve```
     - ```heroku create <app_name>```
+        - if heroku app not in .git/config:
+        - ``` heroku git:remote --app <app_name>```
 7. open runtime.txt
     - ```python-<version>```
 8. open Procfile
-    - ```web: gunicorn _project.wsgi```
+    - ```web: gunicorn <project_name>/_project.wsgi```
 9. open _project/settings.py
     ```python
     import django_heroku
