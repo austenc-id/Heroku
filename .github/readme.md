@@ -28,7 +28,6 @@
     env
     __pycache__
     migrations
-    _assets
     ```
 6. run bash
     - ```djmake```
