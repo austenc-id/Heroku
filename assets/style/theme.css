@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+
+:root {
+  --void: #0c011a;
+  --ocean: #142677;
+  --wave: #2f70a8;
+  --sand: #d6a10f;
+  --land: #642805;
+  --grass: #078d12;
+  --forest: #06690e;
+  --stone: #b6c8d8;
+  --acme: "Acme", sans-serif;
+}
+
+body {
+  font-family: var(--acme);
+  color: var(--stone);
+}
+.bg-void {
+  background-color: var(--void);
+}
+.bg-ocean {
+  background-color: var(--ocean);
+}
+a:any-link:hover,
+.pseudo-link:hover {
+  color: var(--wave);
+}
+a:any-link,
+.pseudo-link {
+  color: var(--sand);
+  text-decoration: none;
+  cursor: pointer;
+}
+.home-link {
+  color: var(--stone) !important;
+}
+.border-ocean {
+  border: 2px solid var(--ocean);
+}
+li {
+  list-style: none;
+}
+
+.i {
+  font-style: italic;
+}
+
+summary {
+  font-size: 15px;
+}
+details>li {
+  font-size: 13px;
+}
+
+footer {
+  font-size: 12px;
+}
