@@ -50,3 +50,4 @@
     django_heroku.settings(locals())
     ```
 10. git commit
+11. figure out SECRET_KEY
