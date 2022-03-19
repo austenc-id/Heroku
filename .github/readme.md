@@ -51,3 +51,9 @@
     ```
 10. git commit
 11. figure out SECRET_KEY
+12. run bash
+    - ```git push heroku main```
+    - or
+    - ```git push heroku <branch_name>:main```
+    - then
+    - ```heroku ps:scale web=1```
