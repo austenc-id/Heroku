@@ -80,10 +80,10 @@ DATABASES = {
                     'default': {
                             'ENGINE': 'django.db.backends.postgresql_psycopg2',
                             'NAME': 'resume',
-                            # 'USER': 'postgres',
-                            # 'PASSWORD': '2644161',
-                            # 'HOST': 'localhost',
-                            # 'PORT': '4000',
+                            'USER': 'postgres',
+                            'PASSWORD': '2644161',
+                            'HOST': 'localhost',
+                            'PORT': '4000',
                         }
                     }
 INSTALLED_APPS.append('_home')
