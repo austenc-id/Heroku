@@ -1,19 +1,29 @@
 {% extends 'base/index.html' %}
 {% block content %}
 
-<main class="container">
-    <section class="row">
-        <nav class="col-3 text-end border-mocha-e">
+<main class="row mt-2">
+    <div class="col-4">
+        <nav class="ta-e caps fs-5">
             {% for story in stories %}
-            <navitem class="fs-4">
-                <a href="{% url 'bio:story' story.title %}">{{story}}</a>
-            </navitem>
+            <li class="my-2">
+                {% if story.title == active.title %}
+                    <a id="active-story" class="px-1" href="{% url 'bio:story' story.title %}">{{story}}</a>
+                {% else %}
+                    <a class="px-2" href="{% url 'bio:story' story.title %}">{{story}}</a>
+                {% endif %}
+            </li>
             {% endfor %}
         </nav>
-        <div class="col">
-            <h3 class="text-capitalize text-center font-wave">{{active.title}}</h3>
-            <p class="font-ocean">{{active.content}}</p>
+    </div>
+    {% if active %}
+    <div class="col my-1 pt-1 flex-c ai-c">
+        <h4 class="caps p-1 mb-2 ta-c w-75">{{active.title}}</h4>
+        <div id="content" class="my-1 py-1 px-2 ta-j">
+            {% for paragraph in content %}
+                <p>{{paragraph}}</p>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+    {% endif %}
 </main>
 {% endblock content %}

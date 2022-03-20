@@ -4,15 +4,19 @@ from .models import *
 
 def index(Request):
     context = {
-        'page': 'bio',
-        'stories': Story.objects.all()
+        'page': 'Bio',
+        'stories': Story.objects.all().order_by('title')
     }
     return render(Request, 'bio.html', context)
 
 def story(Request, story):
+    story = Story.objects.get(title=story)
+    content = story.content
+    content = content.split('<p>')
     context = {
-        'page': 'bio',
-        'stories': Story.objects.all(),
-        'active': Story.objects.get(title=story)
+        'page': 'Bio',
+        'stories': Story.objects.all().order_by('title'),
+        'active': story,
+        'content': content
     }
     return render(Request, 'bio.html', context)
