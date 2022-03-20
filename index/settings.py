@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'index.wsgi.application'
 DATABASES = {
                     'default': {
                             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                            'NAME': 'project_name',
-                            'USER': 'postgres',
-                            'PASSWORD': '2644161',
-                            'HOST': 'localhost',
-                            'PORT': '4000',
+                            'NAME': 'resume',
+                            # 'USER': 'postgres',
+                            # 'PASSWORD': '2644161',
+                            # 'HOST': 'localhost',
+                            # 'PORT': '4000',
                         }
                     }
 INSTALLED_APPS.append('_home')
