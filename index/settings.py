@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'index.wsgi.application'
 DATABASES = {
                     'default': {
                             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                            'NAME': 'resume',
-                            'USER': 'postgres',
-                            'PASSWORD': '2644161',
-                            'HOST': 'localhost',
-                            'PORT': '4000',
+                            'NAME': 'd6hovsvqnp7hv5',
+                            'USER': 'nlxbkwxffbspsm',
+                            'PASSWORD': 'a1ae3411a6059decb9264046f2eec7d47a2941ffbb9b82c96fab302db42b1903',
+                            'HOST': 'ec2-44-194-167-63.compute-1.amazonaws.com',
+                            'PORT': '5432',
                         }
                     }
 INSTALLED_APPS.append('_home')
