@@ -14,17 +14,16 @@
     - work
     - education
     - skills
-- responsive design
-    - mobile
-    - ~small~
-    - medium
-    - large
 - add content
     - bio
     - work
     - education
     - skills
-
+- responsive design
+    - ~mobile~
+    - ~small~
+    - ~medium~
+    - ~large~
 ### Wishlist
 
 - Timeline
