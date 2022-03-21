@@ -4,6 +4,10 @@
 
 ### Todo
 
+- bugs
+    - debug=False (status 500)
+        - Missing staticfiles manifest entry for 'images/icons/site-tab.png'
+    - secret key
 - build apps
     - ~home~
     - ~bio~
