@@ -3,7 +3,13 @@ from django.shortcuts import render
 
 def index(Request):
     context = {
-        'page': 'Home',
+        'pages': [
+            {'label': 'Bio', 'url': 'bio:index'},
+            {'label': 'Employment', 'url': 'bio:index'},
+            {'label': 'Education', 'url': 'bio:index'},
+            {'label': 'Skills', 'url': 'bio:index'},
+        ],
+        'active_page': 'Home',
 
     }
     return render(Request, 'home.html', context)

@@ -4,7 +4,13 @@ from .models import *
 
 def index(Request):
     context = {
-        'page': 'Bio',
+        'pages': [
+            {'label': 'Bio', 'url': 'bio:index'},
+            {'label': 'Employment', 'url': 'bio:index'},
+            {'label': 'Education', 'url': 'bio:index'},
+            {'label': 'Skills', 'url': 'bio:index'},
+        ],
+        'active_page': 'Bio',
         'stories': Story.objects.all().order_by('title')
     }
     return render(Request, 'bio.html', context)
@@ -14,7 +20,13 @@ def story(Request, story):
     content = story.content
     content = content.split('<p>')
     context = {
-        'page': 'Bio',
+        'pages': [
+            {'label': 'Bio', 'url': 'bio:index'},
+            {'label': 'Employment', 'url': 'bio:index'},
+            {'label': 'Education', 'url': 'bio:index'},
+            {'label': 'Skills', 'url': 'bio:index'},
+        ],
+        'active_page': 'Bio',
         'stories': Story.objects.all().order_by('title'),
         'active': story,
         'content': content

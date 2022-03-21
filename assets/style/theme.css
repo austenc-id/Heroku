@@ -1,9 +1,8 @@
-/* top right bottom left*/
-/* top left-right bottom*/
-/* top-bottom left-right*/
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Acme&family=Mukta:wght@200&family=Nunito:wght@200&family=Ubuntu:wght@300&display=swap');
+
 :root {
-    --mocha: #352727;
-    --cocoa: #251d1d;
+    --cocoa: #352727;
+    --mocha: #251d1d;
     --espresso: #181515;
     --milk: #8b6969;
     --froth: #5c4646;
@@ -11,126 +10,97 @@
     --lava: #a73729;
     --ocean: #2a5e8f;
     --wave: #4e7fad;
+    --acme: "Acme", sans-serif;
+    --abhaya: "Abhaya Libre", serif;
+    --mukta: "Mukta", sans-serif;
+    --nunito: "Nunito", sans-serif;
+    --ubuntu: "Ubuntu", sans-serif;
 }
+
 body {
-    color: var(--milk);
+    font-family: var(--ubuntu);
+    color: var(--wave);
     background-color: var(--mocha);
 }
-header {
+header{
+        background-color: var(--espresso);
+        border-radius: 5px;
+        border: 1px solid var(--froth);
+}
+nav {
+    border-radius: 5px;
+    border-top: 1px solid var(--froth);
+    border-bottom: 1px solid var(--froth);
+
+}
+main {
     background-color: var(--espresso);
-    border: 1px solid var(--froth);
     border-radius: 5px;
 }
-h1, h2, h3, h4, h5, h6 {
-    background-color: var(--espresso);
+main>.content>.active-content {
+    background-color: var(--mocha);
     border-radius: 5px;
 }
 h1 {
-    color: var(--wave);
+    color: var(--lava);
 }
 h2 {
     color: var(--ocean);
 }
-h4 {
-    color: var(--forest);
-}
-h6 {
+h3 {
     color: var(--lava);
 }
-nav {
-    background-color: var(--cocoa);
-    border-top: 1px solid var(--milk);
-    border-bottom: 1px solid var(--milk);
-    border-radius: 5px;
-}
-p {
-    background-color: var(--cocoa);
-    font-size: 15px;
-    text-indent: 25px;
+h4 {
+    color: var(--ocean);
+    background-color: var(--espresso);
+    text-transform: capitalize;
     border-radius: 5px;
     border-top: 1px solid var(--froth);
     border-bottom: 1px solid var(--froth);
-    padding: .5rem .75rem;
 }
-#content {
-    border-left: 1px solid var(--froth);
-    border-right: 1px solid var(--froth);
-    border-radius: 5px;
+h5 {
+    color: var(--ocean);
 }
-#active-story {
-    background-color: var(--espresso);
-    border-right: 3px solid var(--milk);
-    border-radius: 5px;
-}
-a:any-link, a:any-link>img {
+a:any-link {
     color: var(--forest);
     text-decoration: none;
+    border-radius: 5px;
 }
-img {
-    color: var(--forest);
-    /* text-decoration: none; */
-}
-a:any-link:hover {
-    background-color: var(--espresso);
+nav>li:hover {
+    cursor: pointer;
+    border-radius: 5px;
     border: 1px solid var(--froth);
-    border-radius: 5px;
-    text-decoration: none;
+    background-color: var(--espresso);
+}
+a:hover {
+    color: var(--lava);
+}
+footer {
+    background-color: var(--espresso);
+}
+p {
+    font-family: var(--nunito);
 }
 li {
     list-style: none;
-}
-.caps {
     text-transform: capitalize;
 }
+.active-page {
+    background-color: var(--espresso);
+    border-radius: 5px;
+}
+.active-page>a:any-link {
+    color: var(--lava);
+}
+.active-story>a:any-link {
+    color: var(--ocean);
 
-/* alignment */
-
-@media screen and (min-width: 992px) {
-    body {
-        padding-left: 10% !important;
-        padding-right: 10% !important;
-    }
-    #index-header, #index-nav, #index-main {
-        margin-left: 10% !important;
-        margin-right: 10% !important;
-    }
-    #index-main {
-        margin-left: 15%;
-        margin-right: 15%;
-    }
 }
-.flex {
-    display: flex;
-    flex-direction: row;
-}
-.flex-c {
-    display: flex;
-    flex-direction: column;
-}
-.jc-c {
-    justify-content: center;
-}
-.jc-b {
-    justify-content:space-between;
-}
-.ai-s {
-    align-items: flex-start;
-}
-.ai-c {
-    align-items: center;
-}
-.ai-e {
-    align-items: flex-end;
-}
-.ta-s {
-    text-align: start;
-}
-.ta-c {
-    text-align: center;
-}
-.ta-e {
-    text-align: end;
-}
-.ta-j {
-    text-align: justify;
+.active-story {
+    color: var(--lava);
+    background-color: var(--mocha);
+    border-radius: 5px;
+    border-top: 1px solid var(--froth);
+    border-bottom: 1px solid var(--froth);
+    border-right: 3px solid var(--froth);
 }

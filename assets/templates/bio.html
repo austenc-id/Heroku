@@ -1,29 +1,26 @@
 {% extends 'base/index.html' %}
 {% block content %}
-
-<main class="row mt-2">
-    <div class="col-4">
-        <nav class="ta-e caps fs-5">
+    <div class="content">
+        <div class="content-list">
             {% for story in stories %}
-            <li class="my-2">
-                {% if story.title == active.title %}
-                    <a id="active-story" class="px-1" href="{% url 'bio:story' story.title %}">{{story}}</a>
-                {% else %}
-                    <a class="px-2" href="{% url 'bio:story' story.title %}">{{story}}</a>
+            {% if story.title == active.title %}
+                <li class="active-story">
+            {% else %}
+                <li>
+            {% endif %}
+                    <a href="{% url 'bio:story' story.title %}">{{story}}</a>
+                </li>
+        {% endfor %}
+        </div>
+        <div class="active-content">
+            {% if active %}
+                <h4>{{active.title}}</h4>
+                <article>
+                    {% for paragraph in content %}
+                        <p>{{paragraph}}</p>
+                    {% endfor %}
+                </article>
                 {% endif %}
-            </li>
-            {% endfor %}
-        </nav>
-    </div>
-    {% if active %}
-    <div class="col my-1 pt-1 flex-c ai-c">
-        <h4 class="caps p-1 mb-2 ta-c w-75">{{active.title}}</h4>
-        <div id="content" class="my-1 py-1 px-2 ta-j">
-            {% for paragraph in content %}
-                <p>{{paragraph}}</p>
-            {% endfor %}
         </div>
     </div>
-    {% endif %}
-</main>
 {% endblock content %}
