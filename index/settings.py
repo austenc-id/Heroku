@@ -129,7 +129,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 INSTALLED_APPS.append("_home")
 INSTALLED_APPS.append("_bio")
 INSTALLED_APPS.append("_work")
-STATICFILES_DIRS = [BASE_DIR / "assets"]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticroot"
 TEMPLATES[0].update({"DIRS": [BASE_DIR / "assets/templates"]})
 
