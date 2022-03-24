@@ -50,6 +50,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+MIDDLEWARE_CLASSES = (
+    'whitenoise.middleware.WhiteNoiseMiddleware'
+)
+
 ROOT_URLCONF = "index.urls"
 
 TEMPLATES = [
@@ -119,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = "staticfiles/"
+STATIC_URL = "_assets"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -129,9 +133,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 INSTALLED_APPS.append("_home")
 INSTALLED_APPS.append("_bio")
 INSTALLED_APPS.append("_work")
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticroot"
-TEMPLATES[0].update({"DIRS": [BASE_DIR / "static/templates"]})
+STATICFILES_DIRS = [BASE_DIR / "_assets"]
+STATIC_ROOT = BASE_DIR / "_assetroot"
+TEMPLATES[0].update({"DIRS": [BASE_DIR / "_assets/templates"]})
 
 django_heroku.settings(locals())
 LOGGING = {
