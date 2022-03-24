@@ -72,6 +72,15 @@
         list-style: none;
         text-transform: capitalize;
     }
+    .positions > details {
+        border: 1px solid var(--froth);
+        border-radius: 5px;
+    }
+    .duty-list > details > summary > span {
+        text-decoration: underline;
+        margin: 2%;
+        font-size: 14px;
+    }
 }
 @media (hover: hover){
     main>.content>.active-content {
@@ -94,11 +103,11 @@
     .active-page>a:any-link {
         color: var(--lava);
     }
-    .active-story>a:any-link {
+    .active-story>a:any-link, .active-entry>a:any-link {
         color: var(--ocean);
 
     }
-    .active-story {
+    .active-story, .active-entry {
         color: var(--lava);
         background-color: var(--mocha);
         border-radius: 5px;

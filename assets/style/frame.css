@@ -27,6 +27,10 @@
         font-size: 20px;
 
     }
+    h6 {
+        font-size: 15px;
+
+    }
     header>.links {
         display: flex;
         flex-direction: column;
@@ -66,7 +70,7 @@
     .active-content {
         margin: 2%;
         padding: 4%;
-        max-height: 50vh;
+        max-height: fit-content;
         text-align: center;
         grid-column: 2;
     }
@@ -78,6 +82,17 @@
         padding: 2%;
         text-indent: 8%;
         text-align: justify;
+    }
+    details > summary  {
+        margin: 2%;
+        font-weight: bold;
+    }
+    .content {
+        overflow-y: scroll;
+    }
+    .positions {
+        margin-top: 4%;
+        margin-bottom: 5%;
     }
     footer {
         position: fixed;

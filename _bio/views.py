@@ -1,15 +1,11 @@
 from django.shortcuts import render
 from .models import *
+from index.pages import pages
 # Create your views here.
 
 def index(Request):
     context = {
-        'pages': [
-            {'label': 'Bio', 'url': 'bio:index'},
-            {'label': 'Employment', 'url': 'bio:index'},
-            {'label': 'Education', 'url': 'bio:index'},
-            {'label': 'Skills', 'url': 'bio:index'},
-        ],
+        'pages': pages,
         'active_page': 'Bio',
         'stories': Story.objects.all().order_by('title')
     }
@@ -20,12 +16,7 @@ def story(Request, story):
     content = story.content
     content = content.split('<p>')
     context = {
-        'pages': [
-            {'label': 'Bio', 'url': 'bio:index'},
-            {'label': 'Employment', 'url': 'bio:index'},
-            {'label': 'Education', 'url': 'bio:index'},
-            {'label': 'Skills', 'url': 'bio:index'},
-        ],
+        'pages': pages,
         'active_page': 'Bio',
         'stories': Story.objects.all().order_by('title'),
         'active': story,
