@@ -134,7 +134,7 @@ INSTALLED_APPS.append("_home")
 INSTALLED_APPS.append("_bio")
 INSTALLED_APPS.append("_work")
 STATICFILES_DIRS = [BASE_DIR / "_assets"]
-STATIC_ROOT = BASE_DIR / "_assetroot"
+STATIC_ROOT = BASE_DIR / "static"
 TEMPLATES[0].update({"DIRS": [BASE_DIR / "_assets/templates"]})
 
 django_heroku.settings(locals())
