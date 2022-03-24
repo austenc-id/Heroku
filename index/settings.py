@@ -131,7 +131,7 @@ INSTALLED_APPS.append("_bio")
 INSTALLED_APPS.append("_work")
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticroot"
-TEMPLATES[0].update({"DIRS": [BASE_DIR / "assets/templates"]})
+TEMPLATES[0].update({"DIRS": [BASE_DIR / "static/templates"]})
 
 django_heroku.settings(locals())
 LOGGING = {
