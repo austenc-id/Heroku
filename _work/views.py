@@ -1,9 +1,6 @@
-from multiprocessing import context
 from django.shortcuts import render
+from project.pages import pages
 from .models import *
-from index.pages import pages
-
-# Create your views here.
 
 
 def index(Request):

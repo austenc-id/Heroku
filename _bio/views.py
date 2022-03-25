@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import *
-from index.pages import pages
-# Create your views here.
+from project.pages import pages
+from .models import Story
+
 
 def index(Request):
     context = {
