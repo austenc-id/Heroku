@@ -4,14 +4,10 @@
 
 ### Todo
 
-- bugs
-    - debug=False (status 500)
-        - Missing staticfiles manifest entry for 'images/icons/site-tab.png'
-    - secret key
 - build apps
     - ~home~
     - ~bio~
-    - work
+    - ~work~
     - education
     - skills
 - add content
@@ -19,14 +15,20 @@
     - work
     - education
     - skills
-- responsive design
+- ~responsive design~
     - ~mobile~
     - ~small~
     - ~medium~
     - ~large~
+- bugs
+    - debug=False (status 500)
+        - Missing staticfiles manifest entry for 'images/icons/site-tab.png'
+    - secret key
+
 ### Wishlist
 
-- Timeline
-- Secure messaging
 - Document build/download
+- Secure messaging
 - Mulitmedia Portfolio
+- Timeline
+- Android app
