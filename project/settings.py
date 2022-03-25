@@ -103,7 +103,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = os.path.join(BASE_DIR, '_assets')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, '_assets')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
