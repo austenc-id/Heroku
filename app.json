@@ -1,8 +1,8 @@
 {
-    "name": "Austen C. Myers resume",
+    "name": "Austen C. Myers resume protoype app",
     "description": "My professional profile.",
     "image": "heroku/python",
-    "repository": "https://github.com/heroku/python-getting-started",
+    "repository": "https://github.com/austenc-id/resume",
     "keywords": [
         "python",
         "django"
