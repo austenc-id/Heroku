@@ -36,7 +36,7 @@
               {{position.label.title}}
             </summary>
             <ul class="duty-list"><h6>Responsibilities:</h6>
-              {% for duty in position.responsibilities.all %}
+              {% for duty in position.duties.all %}
                 <details class="duty-details"
                 id="duty-{{duty.element_id}}-details">
                   <summary onclick="focusDetails('duty', 'duty-{{duty.element_id}}-details')">
