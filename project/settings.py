@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     '_home',
     '_bio',
     '_work',
-    # '_education',
+    '_education',
     # '_skills',
 ]
 
