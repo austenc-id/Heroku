@@ -11,7 +11,7 @@
             {% if group.label == active.label %}
                 <li class="active-story">
             {% else %}
-                <li>
+                <li class="entry">
             {% endif %}
                     <a href="{% url 'edu:group' group.label %}">{{group}}</a>
                 </li>
@@ -20,7 +20,33 @@
         <div class="active-content">
             {% if active %}
                 <h4>{{ active.label }}</h4>
-                {% endif %}
+                <div class="courses">
+                    {% for course in active.courses.all|dictsortreversed:'start' %}
+                    <details id="{{course.element_id}}-details" class="course-details">
+                        <summary onclick="focusCourse('{{course.element_id}}-details')">{{course}}</summary>
+                        <h6>{{course.name}}</h6>
+                        <small>
+                            <i>{{course.dates}}</i>
+                        </small>
+                    </details>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
+    <script>
+
+        function focusCourse(id) {
+          let detailsElements = document.getElementsByClassName('course-details')
+          console.log(detailsElements)
+          let active = document.getElementById(id)
+          console.log(active)
+          for (let i = 0; i < detailsElements.length; i++) {
+            let element = detailsElements[i]
+            element.open = false
+          }
+          let state = active.open
+      }
+
+      </script>
 {% endblock content %}

@@ -1,11 +1,11 @@
 from django.db.models  import *
 from random import randint
-from .utils import format, calculate as calc
+from project.utils import format, calculate as calc
 # Create your models here.
 class Entry(Model):
     class Meta:
         verbose_name_plural = 'Entries'
-    label = CharField(max_length=14)
+    label = CharField(max_length=18)
     element_id = IntegerField(default=0)
     employer = CharField(max_length=48)
     start = CharField(max_length=18, blank=True)
@@ -16,7 +16,15 @@ class Entry(Model):
     def __str__(self):
         return self.employer
     def dates(self):
-        return f'{format.dates(self.start)} - {format.dates(self.end)}'
+        start = format.dates(self.start)
+        end = format.dates(self.end)
+        if start != None and end != None:
+            return f'{start} - {end}'
+        elif start == None and end != None:
+            return f'{self.start} - {end}'
+        elif start != None and end == None:
+            return f'{start} - {self.end}'
+        return f'{self.start} - {self.end}'
     def duration(self):
         duration = calc.dates(self.start, self.end)
         if duration != (0, 0, 0):

@@ -7,11 +7,11 @@
           <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
         </svg>
       </li>
-      {% for entry in entries|dictsort:"start" %}
+      {% for entry in entries|dictsort:"element_id" %}
         {% if entry.label == active.label %}
           <li class="active-entry">
         {% else %}
-          <li>
+          <li class="entry">
         {% endif %}
             <a href="{% url 'work:details' entry %}">{{entry.label}}</a>
           </li>
@@ -35,7 +35,8 @@
             <summary onclick="focusDetails('position', 'pos-{{position.element_id}}-details')">
               {{position.label.title}}
             </summary>
-            <ul class="duty-list"><h6>Responsibilities:</h6>
+            <ul class="duty-list">
+              <h6>Responsibilities:</h6>
               {% for duty in position.duties.all %}
                 <details class="duty-details"
                 id="duty-{{duty.element_id}}-details">
@@ -65,7 +66,6 @@
       console.log(className, active)
       for (let i = 0; i < detailsElements.length; i++) {
         let element = detailsElements[i]
-        // let state = element.getAttribute('open')
         element.open = false
       }
       let state = active.open

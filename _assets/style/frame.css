@@ -95,9 +95,9 @@
         margin-bottom: 5%;
     }
     footer {
-        position: fixed;
+        position: relative;
         border-radius: 5px;
-        bottom: 2%;
+        margin: 2% 0%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -167,8 +167,8 @@
         padding: 1% 6% 0%;
     }
     footer {
-        width: 88%;
-        right: 6%;
+        width: 90%;
+        left: 5%;
     }
 
 }
@@ -178,43 +178,27 @@
     }
     footer {
         width: 84%;
-        right: 8%;
+        left: 8%;
     }
 }
 @media (min-width: 600px) {
     body {
         padding: 1% 10% 0%;
     }
-    footer {
-        width: 80%;
-        right: 10%;
-    }
 }
 @media (min-width: 700px) {
     body {
         padding: 1% 15% 0%;
-    }
-    footer {
-        width: 70%;
-        right: 15%;
     }
 }
 @media (min-width: 800px) {
     body {
         padding: 1% 20% 0%;
     }
-    footer {
-        width: 60%;
-        right: 20%;
-    }
 }
 @media (min-width: 900px) {
     body {
         padding: 1% 25% 0%;
-    }
-    footer {
-        width: 50%;
-        right: 25%;
     }
 }
 @media (min-width: 1000px) {
@@ -223,10 +207,5 @@
     }
     header, nav {
         margin-bottom: 5%;
-    }
-
-    footer {
-        width: 30%;
-        right: 35%;
     }
 }

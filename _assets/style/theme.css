@@ -72,9 +72,12 @@
         list-style: none;
         text-transform: capitalize;
     }
-    .positions > details {
-        border: 1px solid var(--froth);
+    .positions > details, .courses > details {
+        border-bottom: 1px solid var(--froth);
+        border-top: 1px solid var(--froth);
         border-radius: 5px;
+        margin-top: 2%;
+        padding: 2%;
     }
     .duty-list > details > summary > span {
         text-decoration: underline;
@@ -114,5 +117,9 @@
         border-top: 1px solid var(--froth);
         border-bottom: 1px solid var(--froth);
         border-right: 3px solid var(--froth);
+    }
+    .entry {
+        border-bottom: 1px solid var(--froth);
+        margin: 4% 0%;
     }
 }

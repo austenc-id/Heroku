@@ -19,4 +19,5 @@ def details(Request, entry):
         'entries': Entry.objects.all(),
         'active': active
     }
+    print(active.positions.all())
     return render(Request, 'work.html', context)
