@@ -8,7 +8,7 @@
     - ~home~
     - ~bio~
     - ~work~
-    - education
+    - ~education~
     - skills
 - add content
     - bio
