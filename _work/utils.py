@@ -1,40 +1,51 @@
 class format:
-  def dates(date):
-    if date.month == 1:
+  def dates(date:str):
+    date = date.split('-')
+    year = int(date[0])
+    month = int(date[1])
+    day = int(date[2])
+    if month == 1:
       month = 'Jan'
-    if date.month == 2:
+    elif month == 2:
       month = 'Feb'
-    if date.month == 3:
+    elif month == 3:
       month = 'Mar'
-    if date.month == 4:
+    elif month == 4:
       month = 'Apr'
-    if date.month == 5:
+    elif month == 5:
       month = 'May'
-    if date.month == 6:
+    elif month == 6:
       month = 'Jun'
-    if date.month == 7:
+    elif month == 7:
       month = 'Jul'
-    if date.month == 8:
+    elif month == 8:
       month = 'Aug'
-    if date.month == 9:
+    elif month == 9:
       month = 'Sep'
-    if date.month == 10:
+    elif month == 10:
       month = 'Oct'
-    if date.month == 11:
+    elif month == 11:
       month = 'Nov'
-    if date.month == 12:
+    elif month == 12:
       month = 'Dec'
-    return f'{month}. {date.day}, {date.year}'
+    return f'{month}. {day}, {year}'
 
 class calculate:
   def dates(start, end):
     if start != end:
-      years = end.year - start.year
-      months = (12 - end.month) + (12 - start.month)
+      start = start.split('-')
+      start_year = int(start[0])
+      start_month = int(start[1])
+      start_day = int(start[2])
+      end = end.split('-')
+      end_year = int(end[0])
+      end_month = int(end[1])
+      end_day = int(end[2])
+      years = end_year - start_year
+      months = (12 - end_month) + (12 - start_month)
       if months > 12:
         years += 1
         months -= 12
-      thirty = [4, 6, 9, 11]
       return (years, months, 0)
     return (0, 0, 0)
 
