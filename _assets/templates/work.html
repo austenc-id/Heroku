@@ -56,20 +56,18 @@
       {% endif %}
     </div>
   </div>
-  <script>
-
-    function focusDetails(group, id) {
-      let className = group + '-details'
-      let detailsElements = document.getElementsByClassName(className)
-      console.log(detailsElements)
-      let active = document.getElementById(id)
-      console.log(className, active)
-      for (let i = 0; i < detailsElements.length; i++) {
-        let element = detailsElements[i]
-        element.open = false
-      }
-      let state = active.open
+<script>
+  function focusDetails(group, id) {
+    let className = group + '-details'
+    let detailsElements = document.getElementsByClassName(className)
+    console.log(detailsElements)
+    let active = document.getElementById(id)
+    console.log(className, active)
+    for (let i = 0; i < detailsElements.length; i++) {
+      let element = detailsElements[i]
+      element.open = false
+    }
+    let state = active.open
   }
-
-  </script>
+</script>
 {% endblock content %}
