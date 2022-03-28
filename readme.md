@@ -1,4 +1,4 @@
-# Heroku
+# Heroku Apps
 
 ## [Django Reference](https://acmf-django-reference.herokuapp.com)
 
