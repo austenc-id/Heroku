@@ -1,0 +1,87 @@
+{% extends 'pages/django.html' %}
+{% block steps %}
+
+<header class="text-center">
+    <h3>Heroku</h3>
+    <h5 class="border-bottom">Description</h5>
+    <p class="pt-3">We're going to deploy the Postgres Django project to Heroku.</p>
+    <h5 class="border-bottom">Environment</h5>
+    <p class="p">Windows 10, Python 3.10.2, Git Bash, Postgresql 14, Heroku CLI</p>
+</header>
+
+<details class="ms-3" id="steps">
+    <summary class="fs-3">Steps</summary>
+    <details class="ms-3" id="bash-1">
+        <summary class="fs-5">bash</summary>
+        <ol>
+            <li><code class="p-3">pip install django-heroku gunicorn</code></li>
+            <li><code class="p-3">pip freeze > requirements.txt</code></li>
+            <li><code class="p-3">touch Procfile runtime.txt app.json</code></li>
+            <li><code class="p-3">heroku create 'app_name'</code></li>
+            <li><small class="i p-3">if heroku app not in .git/config</small>
+                <br>
+                <code class="p-3">heroku git:remote --app 'app_name'</code>
+            </li>
+        </ol>
+    </details>
+    <details class="ms-3" id="root-files">
+        <summary class="fs-5">'project_name' root</summary>
+        <span>runtime.txt</span>
+        <br><code>python-'version'</code>
+        <br><span>Procfile</span>
+        <br><code>web: gunicorn 'project_name'.wsgi</code>
+        <br><span>app.json</span>
+        <pre>
+            <code>
+                {
+                    "name": "Start on Heroku: Python",
+                    "description": "A barebones Python app, which can easily be deployed to Heroku.",
+                    "image": "heroku/python",
+                    "repository": "https://github.com/heroku/python-getting-started",
+                    "keywords": ["python", "django" ],
+                    "addons": [ "heroku-postgresql" ],
+                    "env": {
+                      "SECRET_KEY": {
+                        "description": "The secret key for the Django application.",
+                        "generator": "secret"
+                      }
+                    },
+                    "environments": {
+                      "test": {
+                        "scripts": {
+                          "test-setup": "python manage.py collectstatic --noinput",
+                          "test": "python manage.py test"
+                        }
+                      }
+                    }
+                  }
+            </code>
+        </pre>
+
+
+    </details>
+    <details class="ms-3" id="project-settings">
+        <summary class="fs-5">'project_name'/</summary>
+        <span>settings.py</span>
+        <pre>
+            <code>
+                import django_heroku
+
+                ALLOWED_HOSTS = [
+                    '<heroku_app_name>.herokuapp.com'
+                ]
+
+                django_heroku.settings(locals())
+            </code>
+        </pre>
+    </details>
+    <details class="ms-3" id="bash-2">
+        <summary class="fs-5">bash</summary>
+        <li><code class="p-3">git add .</code></li>
+        <li><code class="p-3">git commit</code></li>
+        <li><code class="p-3">git push heroku main</code> or <code class="p-3">git push heroku 'branch_name':main</code></li>
+        <li><code class="p-3">heroku ps:scale web=1</code></li>
+        <li><code class="p-3">heroku open</code></li>
+    </details>
+</details>
+{% endblock steps %}

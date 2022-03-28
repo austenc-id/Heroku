@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block index %}
+<header class="row border-bottom pb-2">
+    <h1>Code Reference</h1>
+</header>
+<nav class="row border-bottom pt-2">
+    <nav class="col-2">
+        <a href="{% url 'home:index' %}"><h5>Home</h5></a>
+    </nav>
+    <nav class="col-2">
+        <a href="{% url 'home:django' %}"><h5>Django</h5></a>
+    </nav>
+</nav>
+<main class="container border-bottom p-2">
+    {% block content %}{% endblock content %}
+</main>
+<footer class="row p-2">
+    <footer class="col">acmf 2022</footer>
+    <footer class="col-6 text-center">Django, Bootstrap</footer>
+    <footer class="col text-end">message</footer>
+</footer>
+{% endblock index %}

@@ -1,0 +1,176 @@
+{% extends 'pages/django.html' %}
+{% block steps %}
+
+<header class="text-center">
+    <h3>Postgres</h3>
+    <h5 class="border-bottom">Description</h5>
+    <p class="pt-3">We're going to initialize a Django project, hook it up to Postgresql, and get it operational.</p>
+    <h5 class="border-bottom">Environment</h5>
+    <p class="p">Windows 10, Python 3.10.2, Git Bash, Postgresql 14</p>
+</header>
+
+<details class="ms-3" id="steps">
+    <summary class="fs-3">Steps</summary>
+    <details class="ms-3" id="bash-1">
+        <summary class="fs-5">bash</summary>
+        <ol class="text-start">
+            <li><code class="p-3">mkdir 'project_name'</code></li>
+            <li><code class="p-3">python -m venv env</code></li>
+            <li><code class="p-3">source env/scripts/activate</code></li>
+            <li><code class="p-3">pip install django</code></li>
+            <li><code class="p-3">pip freeze > requirements.txt</code></li>
+            <li><code class="p-3">git init</code></li>
+            <li><code class="p-3">django-admin startproject 'project_name' .</code></li>
+            <li><code class="p-3">mkdir assets assets/templates assets/style assets/scripts assets/images/ assets/images/icons/</code></li>
+            <li><code class="p-3">touch assets/templates/base.html assets/templates/index.html assets/style/theme.css assets/style/bootstrap.css assets/style/bootstrap.css.map .gitignore</code></li>
+            <li><code class="p-3">django-admin startapp 'app_name'</code></li>
+        </ol>
+    </details>
+    <details class="ms-3" id="templates">
+        <summary class="fs-5">assets/templates/</summary>
+        <span>base.html</span>
+        <pre class="pt-1">
+            <code>
+                &#123;% load static %&#125;
+                &lt;!DOCTYPE html>
+                &lt;html lang="en">
+                &lt;head>
+                    &lt;meta charset="UTF-8">
+                    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    &lt;title>'Site Title' &lt;/title>
+                    &lt;!-- Tab Icon" -->
+                    &lt;link rel="shortcut icon" href="&#123;% static 'images/icons/site-tab.png' %&#125;">
+                    &lt;!-- Bootstrap -->
+                    &lt;link rel="stylesheet" href="&#123;% static 'style/bootstrap.css' %&#125;">
+                    &lt;!-- CSS -->
+                    &lt;link rel="stylesheet" href="&#123;% static 'style/theme.css' %&#125;">
+                &lt;/head>
+                &lt;body class="container">
+                    &#123;% block index %&#125; &#123;% endblock index %&#125;
+                &lt;/body>
+                &lt;/html>
+            </code>
+        </pre>
+        <span>index.html</span>
+        <pre class="pt-1">
+            <code>
+                &#123;% extends 'base.html' %&#125;
+                &#123;% block index %&#125;
+                &lt;header class="row">
+                &lt;h1>&lt;/h1>
+                &lt;/header>
+                &lt;nav class="row">
+                    &lt;navitem class="col-2">
+                        &lt;a href="&#123;% url 'home:index' %&#125;">&lt;h5>Home&lt;/h5>&lt;/a>
+                    &lt;/navitem>
+                &lt;/nav>
+                &lt;main class="containeritem">
+                    &#123;% block content %&#125; &#123;% endblock content %&#125;
+                &lt;/main>
+                &lt;footer class="row">
+                    &lt;footer class="col">&lt;/footer>
+                    &lt;footer class="col-6 text-center">&lt;/footer>
+                    &lt;footer class="col text-end">&lt;/footer>
+                &lt;/footer>
+                &#123;% endblock index %&#125;
+            </code>
+        </pre>
+
+    </details>
+    <details class="ms-3" id="psql">
+        <summary class="fs-5">SQ shell (psql)</summary>
+        <ol>
+            <li>set defaults</li>
+            <li>enter password</li>
+            <li><code class="ps-1">CREATE DATABASE 'project_name';</code></li>
+            <li><code class="ps-1">\c 'project_name';</code></li>
+        </ol>
+    </details>
+    <details class="ms-3" id="git-ignore">
+        <summary class="fs-5">.gitignore</summary>
+        <pre>
+            <code>
+                env
+                __pycache__
+                migrations
+            </code>
+        </pre>
+    </details>
+    <details class="ms-3" id="bash-2">
+        <summary class="fs-5">bash</summary>
+        <ol>
+            <li><code class="p-3">django-admin startapp 'app_name'</code></li>
+            <li><code class="p-3">touch 'app_name'/urls.py</code></li>
+            <li><code class="p-3">python manage.py makemigrations</code></li>
+            <li><code class="p-3">python manage.py migrate</code></li>
+            <li><code class="p-3">python manage.py createsuperuser</code></li>
+        </ol>
+    </details>
+    <details class="ms-3" id="app-views-urls">
+        <summary class="fs-5">'app_name'/</summary>
+        <span>views.py</span>
+        <pre>
+            <code>
+                from django.shortcuts import render
+
+                def index(Request):
+                    return render(Request, 'index.html')
+            </code>
+        </pre>
+        <span>urls.py</span>
+        <pre>
+            <code>
+                from django.urls import path
+                from .views import index
+
+                app_name = '<app_name>'
+                urlpatterns = [
+                    path('', index, name='<url_name>')
+                    ]
+            </code>
+        </pre>
+    </details>
+    <details class="ms-3" id="proj-settings-urls">
+        <summary class="fs-5">'project_name'/</summary>
+        <span>settings.py</span>
+        <pre>
+            <code>
+                DATABASES = {
+                    'default': {
+                            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                            'NAME': 'project_name',
+                            'USER': 'postgres',
+                            'PASSWORD': 'password',
+                            'HOST': 'localhost',
+                            'PORT': 'port_number',
+                        }
+                    }
+                INSTALLED_APPS.append('<app_name>')
+                STATICFILES_DIRS = [BASE_DIR / 'assets']
+                STATIC_ROOT = BASE_DIR / 'staticroot'
+                TEMPLATES[0].update({'DIRS':[ BASE_DIR / 'assets/templates']})
+            </code>
+        </pre>
+        <span>urls.py</span>
+        <pre>
+            <code>
+                from django.urls import path, include
+
+                urlpatterns = [
+                    path('', include('<app_name>.urls))
+                    ]
+            </code>
+        </pre>
+    </details>
+    <details class="ms-3" id="bash-3">
+        <summary class="fs-5">bash</summary>
+        <ol>
+            <li><code class="p-3">git add .</code></li>
+            <li><code class="p-3">git commit</code></li>
+            <li><code class="p-3">python manage.py runserver 'port_number'</code></li>
+        </ol>
+    </details>
+</details>
+
+{% endblock steps %}
