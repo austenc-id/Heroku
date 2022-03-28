@@ -1,0 +1,50 @@
+{% extends 'base/index.html' %}
+{% block content %}
+  <div class="content">
+    <div class="content-list">
+      <li class="nav-toggle" onclick="toggleNav('content-list')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+      </li>
+      {% for group in groups %}
+        {% if group.label == active.label %}
+          <li class="active-story">
+        {% else %}
+          <li class="entry">
+        {% endif %}
+            <a href="{% url 'edu:group' group.label %}">{{group}}</a>
+          </li>
+      {% endfor %}
+    </div>
+    <div class="active-content">
+      {% if active %}
+        <h4>{{ active.label }}</h4>
+        <div class="courses">
+          {% for course in active.courses.all|dictsortreversed:'start' %}
+            <details id="{{course.element_id}}-details" class="course-details">
+              <summary onclick="focusCourse('{{course.element_id}}-details')">{{course}}</summary>
+              <h6>{{course.name}}</h6>
+              <small>
+                  <i>{{course.dates}}</i>
+              </small>
+            </details>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+<script>
+  function focusCourse(id) {
+    let detailsElements = document.getElementsByClassName('course-details')
+    console.log(detailsElements)
+    let active = document.getElementById(id)
+    console.log(active)
+    for (let i = 0; i < detailsElements.length; i++) {
+      let element = detailsElements[i]
+      element.open = false
+    }
+    let state = active.open
+  }
+</script>
+{% endblock content %}

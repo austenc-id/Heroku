@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Acme&family=Mukta:wght@200&family=Nunito:wght@200&family=Ubuntu:wght@300&display=swap');
+
+:root {
+  --cocoa: #352727;
+  --mocha: #251d1d;
+  --espresso: #181515;
+  --milk: #8b6969;
+  --froth: #5c4646;
+  --forest: #327730;
+  --lava: #a73729;
+  --ocean: #2a5e8f;
+  --wave: #4e7fad;
+  --nunito: "Nunito", sans-serif;
+  --ubuntu: "Ubuntu", sans-serif;
+}
+
+@media screen {
+  body {
+    font-family: var(--ubuntu);
+    color: var(--wave);
+    background-color: var(--mocha);
+  }
+  header{
+    background-color: var(--espresso);
+    border-radius: 5px;
+    border: 1px solid var(--froth);
+  }
+  nav {
+    border-radius: 5px;
+    border-top: 1px solid var(--froth);
+    border-bottom: 1px solid var(--froth);
+  }
+  .nav-toggle {
+    color: var(--forest);
+  }
+  main {
+    background-color: var(--espresso);
+    border-radius: 5px;
+  }
+  h1 {
+    color: var(--lava);
+  }
+  h2 {
+    color: var(--ocean);
+  }
+  h3 {
+    color: var(--lava);
+  }
+    h4 {
+    color: var(--ocean);
+    background-color: var(--espresso);
+    text-transform: capitalize;
+    border-radius: 5px;
+    border-top: 1px solid var(--froth);
+    border-bottom: 1px solid var(--froth);
+  }
+  h5 {
+    color: var(--ocean);
+  }
+  a:any-link {
+    color: var(--forest);
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  footer {
+    background-color: var(--espresso);
+  }
+  p {
+    font-family: var(--nunito);
+  }
+  li {
+    list-style: none;
+    text-transform: capitalize;
+  }
+  .positions > details, .courses > details {
+    border-bottom: 1px solid var(--froth);
+    border-top: 1px solid var(--froth);
+    border-radius: 5px;
+    margin-top: 2%;
+    padding: 2%;
+  }
+  .duty-list > details > summary > span {
+    text-decoration: underline;
+    margin: 2%;
+    font-size: 14px;
+  }
+}
+@media (hover: hover){
+  main>.content>.active-content {
+    background-color: var(--mocha);
+    border-radius: 5px;
+  }
+  nav>li:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid var(--froth);
+    background-color: var(--espresso);
+  }
+  a:hover {
+    color: var(--lava);
+  }
+  .active-page {
+    background-color: var(--espresso);
+    border-radius: 5px;
+  }
+  .active-page>a:any-link {
+    color: var(--lava);
+  }
+  .active-story>a:any-link, .active-entry>a:any-link {
+    color: var(--ocean);
+  }
+  .active-story, .active-entry {
+    color: var(--lava);
+    background-color: var(--mocha);
+    border-radius: 5px;
+    border-top: 1px solid var(--froth);
+    border-bottom: 1px solid var(--froth);
+    border-right: 3px solid var(--froth);
+  }
+  .entry {
+    border-bottom: 1px solid var(--froth);
+    margin: 4% 0%;
+  }
+}
